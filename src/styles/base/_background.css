@@ -1,0 +1,37 @@
+$gradient-top-left-mixed: linear-gradient(
+  220deg,
+  $stPatricksBlueLighter,
+  $orangeYellowDark,
+  $persianGreenBase,
+  $darkPurpleBase
+);
+
+$gradient-radial: radial-gradient(
+  $sandyBrownDarker,
+  $orangeYellowDarker,
+  $orangeYellowLighter,
+  $sandyBrownDarker,
+  $orangeYellowLighter
+);
+
+/* 
+
+  BACKGROUNDS
+
+-----------------------*/
+.background {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* gradients */
+  &--gradient-light {
+    background-image: $gradient-top-left-mixed, url($bgDefaultImageUrl);
+    background-blend-mode: color;
+  }
+
+  &--gradient-radial-light {
+    background-image: $gradient-radial, url($bgDefaultImageUrl);
+    background-blend-mode: color;
+  }
+}

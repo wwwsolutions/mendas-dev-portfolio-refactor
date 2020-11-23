@@ -15,10 +15,11 @@
   background: #000;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
-  /* placeholder */
+  height: 100%;
 }
 
 h1,
@@ -39,23 +40,14 @@ img {
   display: none !important;
 }
 
-/* ###### */
-/* ###### */
-/* ###### */
-/* ###### */
+/* ######## */
+/* box shadows */
+$frameGlass: 0.5em 0.5em 0.3125em rgba(0, 0, 0, 0.3),
+  inset 0.3125em -0.3125em 0px 0.3125em rgba(200, 200, 200, 0.15),
+  inset -0.125em -0.125em 0px 0.3125em rgba(195, 195, 195, 0.15);
 
-.parent {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  background-color: rgba(255, 255, 255, 0.349);
-}
-
-.child {
-  grid-area: 1 / 1 / 2 / 2;
-
-  &--1 {
-    background-color: rgba(255, 0, 0, 0.26);
-    z-index: 10;
-  }
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1235);
+  box-shadow: $frameGlass;
+  filter: blur(0.025789345rem);
 }

@@ -44,8 +44,9 @@ usage:
 @import "base/_variables-colors";
 @import "base/_mixins";
 @import "base/_global";
-@import "base/_layout";
 @import "base/_gradients";
+@import "base/_background";
+@import "base/_layout";
 
 /* ★ MODULES */
 /* @import "modules/_example"; */

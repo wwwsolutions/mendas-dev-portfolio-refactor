@@ -24,3 +24,78 @@
   --brand-red: var(--bp500);
   --brand-red-dark: var(--bp700);
 }
+
+/* 
+  PALETTE 
+  https://coolors.co/264653-2a9d8f-e9c46a-f4a261-e76f51
+
+  $charcoal: hsla(197, 37%, 24%, 1);
+  $persian-green: hsla(173, 58%, 39%, 1);
+  $orange-yellow-crayola: hsla(43, 74%, 66%, 1);
+  $sandy-brown: hsla(27, 87%, 67%, 1);
+  $burnt-sienna: hsla(12, 76%, 61%, 1);
+*/
+
+/* grays */
+$blackDarker: hsla(0, 0%, 0%, 1);
+$blackDark: hsla(0, 0%, 10%, 1);
+$blackBase: hsla(0, 0%, 20%, 1);
+$blackLight: hsla(0, 0%, 30%, 1);
+$blackLighter: hsla(0, 0%, 50%, 1);
+$whiteDarker: hsla(0, 0%, 60%, 1);
+$whiteDark: hsla(0, 0%, 70%, 1);
+$whiteBase: hsla(0, 0%, 80%, 1);
+$whiteLight: hsla(0, 0%, 90%, 1);
+$whiteLighter: hsla(0, 0%, 100%, 1);
+
+/* greens */
+$persianGreenDarker: hsla(173, 58%, 19%, 1);
+$persianGreenDark: hsla(173, 58%, 29%, 1);
+$persianGreenBase: hsla(173, 58%, 39%, 1);
+$persianGreenLight: hsla(173, 58%, 49%, 1);
+$persianGreenLighter: hsla(173, 58%, 59%, 1);
+
+$charcoalDarker: hsla(197, 37%, 12%, 1);
+$charcoalDark: hsla(197, 37%, 18%, 1);
+$charcoalBase: hsla(197, 37%, 24%, 1);
+$charcoalLight: hsla(197, 37%, 32%, 1);
+$charcoalLighter: hsla(197, 37%, 40%, 1);
+
+/* yellows */
+$orangeYellowDarker: hsla(43, 89%, 44%, 1);
+$orangeYellowDark: hsla(43, 89%, 51%, 1);
+$orangeYellowBase: hsla(43, 89%, 58%, 1);
+$orangeYellowLight: hsla(43, 89%, 65%, 1);
+$orangeYellowLighter: hsla(43, 89%, 72%, 1);
+
+$intOrangeAeroDarker: hsla(18, 100%, 40%, 1);
+$intOrangeAeroDark: hsla(18, 100%, 45%, 1);
+$intOrangeAeroBase: hsla(18, 100%, 50%, 1);
+$intOrangeAeroLight: hsla(18, 100%, 55%, 1);
+$intOrangeAeroLighter: hsla(18, 100%, 60%, 1);
+
+$sandyBrownDarker: hsla(27, 87%, 47%, 1);
+$sandyBrownDark: hsla(27, 87%, 57%, 1);
+$sandyBrownBase: hsla(27, 87%, 67%, 1);
+$sandyBrownLight: hsla(27, 87%, 77%, 1);
+$sandyBrownLighter: hsla(27, 87%, 87%, 1);
+
+/* reds */
+$sizzlingRedDarker: hsla(359, 83%, 55%, 1);
+$sizzlingRedDark: hsla(359, 83%, 60%, 1);
+$sizzlingRedBase: hsla(359, 83%, 65%, 1);
+$sizzlingRedLight: hsla(359, 83%, 70%, 1);
+$sizzlingRedLighter: hsla(359, 83%, 75%, 1);
+
+/* blues */
+$stPatricksBlueDarker: hsla(235, 42%, 18%, 1);
+$stPatricksBlueDark: hsla(235, 42%, 25%, 1);
+$stPatricksBlueBase: hsla(235, 42%, 32%, 1);
+$stPatricksBlueLight: hsla(235, 42%, 37%, 1);
+$stPatricksBlueLighter: hsla(235, 42%, 44%, 1);
+
+$darkPurpleDarker: hsla(264, 40%, 3%, 1);
+$darkPurpleDark: hsla(264, 40%, 8%, 1);
+$darkPurpleBase: hsla(264, 40%, 13%, 1);
+$darkPurpleLight: hsla(264, 40%, 18%, 1);
+$darkPurpleLighter: hsla(264, 40%, 22%, 1);
