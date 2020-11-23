@@ -1,0 +1,106 @@
+/* svg */
+
+$shapeFill: $charcoalLight;
+$shapeStroke: $charcoalLight;
+
+/* 
+  helper for positioning flex elements 
+  parent must have 'display: flex' rule applied
+*/
+
+/* SVG CONTAINER */
+.element {
+  display: flex;
+  font-size: 1rem; /* baseline */
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--bottom {
+    align-self: flex-end;
+  }
+
+  &--pull-up {
+    transform: translateY(-45%);
+  }
+  &--pull-down {
+    transform: translateY(35%);
+  }
+}
+
+/* svg / shapes */
+.shape {
+  overflow: visible;
+  &--medium {
+    width: 75%;
+  }
+
+  &__rect {
+    stroke: $shapeStroke;
+    stroke-width: 4;
+    fill: none;
+
+    &--inverted {
+      fill: $shapeFill;
+      stroke: $shapeStroke;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: $shapeStroke;
+    stroke-width: 4;
+
+    &--no-stroke {
+      stroke: none !important;
+    }
+
+    &--thinnest {
+      stroke-width: 1;
+    }
+
+    &--thin {
+      stroke-width: 2;
+    }
+
+    &--dashed {
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      stroke-width: 3;
+      stroke-dasharray: 3;
+    }
+
+    &--filled {
+      fill: $shapeFill;
+      stroke: none;
+    }
+  }
+
+  &__text {
+    fill: $shapeFill;
+    font-weight: 600;
+
+    &--inverted {
+      fill: hsla(0, 0%, 100%, 0.5);
+    }
+
+    &--smaller {
+      font-size: 1.65em;
+    }
+
+    &--normal {
+      font-size: 1.8em;
+    }
+
+    &--capitalize {
+      text-transform: capitalize;
+    }
+
+    &--uppercase {
+      text-transform: uppercase;
+    }
+  }
+}

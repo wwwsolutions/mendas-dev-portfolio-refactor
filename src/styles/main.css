@@ -49,4 +49,5 @@ usage:
 @import "base/_layout";
 
 /* ★ MODULES */
-/* @import "modules/_example"; */
+@import "modules/_flowchart";
+@import "modules/_shapes";
