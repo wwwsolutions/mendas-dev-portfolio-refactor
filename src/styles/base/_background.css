@@ -27,7 +27,7 @@ $gradient-radial: radial-gradient(
   /* gradients */
   &--gradient-light {
     background-image: $gradient-top-left-mixed, url($bgDefaultImageUrl);
-    background-blend-mode: color;
+    /* background-blend-mode: color; */
   }
 
   &--gradient-radial-light {

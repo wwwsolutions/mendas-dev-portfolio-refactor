@@ -49,5 +49,5 @@ $frameGlass: 0.5em 0.5em 0.3125em rgba(0, 0, 0, 0.3),
 .glass-effect {
   background: rgba(255, 255, 255, 0.1235);
   box-shadow: $frameGlass;
-  filter: blur(0.025789345rem);
+  filter: blur(0.25789345rem);
 }
