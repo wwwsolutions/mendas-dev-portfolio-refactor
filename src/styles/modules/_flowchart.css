@@ -48,7 +48,21 @@
     /* 
       mix-blend-mode: screen;
     */
-    mix-blend-mode: screen; 
+    /* display: flex; */
+    mix-blend-mode: overlay;
+  }
+
+  
+  & .shape--button .shape__rect--inverted {
+    transition: all .6s;
+
+    &:hover {
+      cursor: pointer;
+      fill: rgb(167, 22, 106);
+      stroke: rgb(167, 22, 106);
+      /* stroke: white; */
+      /* border: 5px solid red; */
+    }
   }
 
   &::after {
@@ -85,6 +99,31 @@
   }
 
   /* rectangles / buttons */
+  &__btn {
+    /* display: flex; */
+
+    &--about {
+      @mixin supportsGrid {
+        grid-area: about;
+      }
+    }
+    &--contact {
+      @mixin supportsGrid {
+        grid-area: contact;
+      }
+    }
+    &--portfolio {
+      @mixin supportsGrid {
+        grid-area: port;
+      }
+    }
+    &--stack {
+      @mixin supportsGrid {
+        grid-area: stack;
+      }
+    }
+  }
+  /* 
   &__about {
     @mixin supportsGrid {
       grid-area: about;
@@ -116,7 +155,7 @@
 
     display: flex;
   }
-
+ */
   /* rectangles / diamonds */
   &__d1 {
     @mixin supportsGrid {
