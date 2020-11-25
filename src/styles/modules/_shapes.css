@@ -1,7 +1,9 @@
 /* svg */
 
-$shapeFill: $charcoalLight;
-$shapeStroke: $charcoalLight;
+/* $shapeFill: $charcoalLight; */
+/* $shapeStroke: $charcoalLight; */
+$shapeFill: black;
+$shapeStroke: black;
 
 /* 
   helper for positioning flex elements 
@@ -10,28 +12,38 @@ $shapeStroke: $charcoalLight;
 
 /* SVG CONTAINER */
 .element {
-  display: flex;
+  /* display: flex; */
   font-size: 1rem; /* baseline */
-
-  &--center {
-    justify-content: center;
-  }
-
-  &--bottom {
-    align-self: flex-end;
-  }
-
-  &--pull-up {
-    transform: translateY(-45%);
-  }
-  &--pull-down {
-    transform: translateY(35%);
-  }
 }
 
 /* svg / shapes */
 .shape {
+  display: block;
   overflow: visible;
+
+  /*   &--button {
+    &:hover {
+      cursor: pointer;
+      border: 5px solid red;
+      mix-blend-mode: saturation;     
+    }
+  }
+ */
+  &--center {
+    margin: 0 auto;
+  }
+
+  /*   &--bottom {
+    align-self: flex-end;
+  }
+ */
+  &--pull-up {
+    transform: translateY(-43%);
+  }
+  &--pull-down {
+    transform: translateY(43%);
+  }
+
   &--medium {
     width: 75%;
   }

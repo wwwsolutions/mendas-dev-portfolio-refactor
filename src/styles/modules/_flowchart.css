@@ -17,28 +17,30 @@
   font-size: 1rem; /* baseline */
   position: relative;
   
-  @mixin atSmall {
-    padding: 0vh 0vw;
-  }
+  /* padding: clamp(16em, 16vw + 1em, 50em) clamp(2em, 2vw + 1em, 100em); */
 
+  padding: 10em 0;
+
+  @mixin atSmall {
+    padding: 14vh 5vw;
+  }
+  
   @mixin atMedium {
-    padding: 20vh 5vw;
+    padding: 20vh 8vw;
   }
 
   @mixin atLarge {
-    padding: 22vh 10vw;
+    padding: 24vh 13vw;
   }
 
   @mixin atXLarge {
-    padding: 24vh 15vw;
+    padding: 28vh 21vw;
   }
   
   @mixin atULarge {
-    padding: 26vh 20vw;
+    padding: 32vh 30vw;
   }
-  
-  /* mix-blend-mode: multiply; */
-
+ 
   /* EFFECTS */
   mix-blend-mode: overlay;
 
@@ -46,7 +48,21 @@
     /* 
       mix-blend-mode: screen;
     */
-    mix-blend-mode: screen; 
+    /* display: flex; */
+    mix-blend-mode: overlay;
+  }
+
+  
+  & .shape--button .shape__rect--inverted {
+    transition: all .6s;
+
+    &:hover {
+      cursor: pointer;
+      fill: hsla(0, 0%, 0%, 0);
+      stroke: hsla(128, 100%, 0%, 1);
+      /* stroke: white; */
+      /* border: 5px solid red; */
+    }
   }
 
   &::after {
@@ -83,6 +99,31 @@
   }
 
   /* rectangles / buttons */
+  &__btn {
+    /* display: flex; */
+
+    &--about {
+      @mixin supportsGrid {
+        grid-area: about;
+      }
+    }
+    &--contact {
+      @mixin supportsGrid {
+        grid-area: contact;
+      }
+    }
+    &--portfolio {
+      @mixin supportsGrid {
+        grid-area: port;
+      }
+    }
+    &--stack {
+      @mixin supportsGrid {
+        grid-area: stack;
+      }
+    }
+  }
+  /* 
   &__about {
     @mixin supportsGrid {
       grid-area: about;
@@ -114,7 +155,7 @@
 
     display: flex;
   }
-
+ */
   /* rectangles / diamonds */
   &__d1 {
     @mixin supportsGrid {

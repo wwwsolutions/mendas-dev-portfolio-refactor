@@ -55,3 +55,5 @@ usage:
 @import "modules/_header";
 @import "modules/_logo";
 
+@import "modules/_footer";
+@import "modules/_social-links";

@@ -6,16 +6,17 @@
   @mixin supportsGrid {
     display: grid;
     grid-template-columns: 1fr 20fr 1fr;
-    grid-template-rows: 1fr min-content 1fr;
+    grid-template-rows: repeat(3, min-content);
     grid-template-areas:
-      ".     .            ."
-      ".     flowchart    ."
-      ".     .            .";
+      ".      header        ."
+      ".      .             ."
+      ".      footer        .";
   }
   /* background-color: rgba(255, 255, 255, 0.349); */
   
   &__overlay {
     &--background {
+      /* display: none !important; */
       @mixin supportsGrid {
         /* 
         If four <grid-line> values are specified,
@@ -28,50 +29,35 @@
       }
       z-index: 10;
     }
-    
-    &--mirror {
-      @mixin supportsGrid {
-        grid-area: 1 / 1 / -1 / -1;
-      }
-      z-index: 40;
-      
-      &::after {
-        display: block;
-        position: absolute;
-        content: "";
-        top: 0;
-        left: 52%;
-        width: 102vw;
-        height: 100%;
-        transform: translateX(-52%);
-        /* opacity: 0.55; */
-        opacity: 1;
-        background-color: rgba(255, 255, 255, .8);
-        background-image: radial-gradient(
-          circle at 50%,
-          hsla(0, 0%, 0%, .2),
-          hsla(0, 0%, 0%, .5) 50%,
-          hsla(0, 0%, 42%, .7) 75%,
-          hsla(0, 0%, 50%, .8) 75%
-        );
-      }    
-    }
 
+    &--header {
+      /* display: none !important; */
+      @mixin supportsGrid {
+        grid-area: header;
+        /* grid-area: 1 / 1 / -1 / -1; */
+      }
+      z-index: 30;
+      /* background-color: transparent !important;   */
+      mix-blend-mode: overlay;
+    }
+    
     &--diagram {
       /* display: none !important; */
       @mixin supportsGrid {
-        grid-area: flowchart;
-      }
-      z-index: 30;          
-    }
-
-    &--header {
-      @mixin supportsGrid {
-        /* grid-area: header; */
+        /* grid-area: flowchart; */
         grid-area: 1 / 1 / -1 / -1;
       }
-      z-index: 11;
-      /* background-color: transparent !important;   */
+      z-index: 20;          
     }
+
+    &--footer {
+      /* display: none !important; */
+      @mixin supportsGrid {
+        grid-area: footer;
+        /* grid-area: 1 / 1 / -1 / -1; */
+      }
+      z-index: 30;
+      /* background-color: transparent !important;   */
+    }    
   }
 }
