@@ -58,8 +58,8 @@
 
     &:hover {
       cursor: pointer;
-      fill: rgb(167, 22, 106);
-      stroke: rgb(167, 22, 106);
+      fill: hsla(0, 0%, 0%, 0);
+      stroke: hsla(128, 100%, 0%, 1);
       /* stroke: white; */
       /* border: 5px solid red; */
     }

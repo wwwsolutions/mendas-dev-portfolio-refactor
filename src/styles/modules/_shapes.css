@@ -38,10 +38,10 @@ $shapeStroke: black;
   }
  */
   &--pull-up {
-    transform: translateY(-45%);
+    transform: translateY(-43%);
   }
   &--pull-down {
-    transform: translateY(35%);
+    transform: translateY(43%);
   }
 
   &--medium {
