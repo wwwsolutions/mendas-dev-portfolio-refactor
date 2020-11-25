@@ -14,7 +14,7 @@
 
     @mixin atMedium {
       display: block;
-      padding-left: clamp(4em, 4vw + 1em, 10em);
+      /* padding-left: clamp(4em, 4vw + 1em, 10em); */
       padding-top: clamp(4em, 4vw + 1em, 10em);
     }
   }

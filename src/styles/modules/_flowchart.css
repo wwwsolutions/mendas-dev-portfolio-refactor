@@ -17,28 +17,30 @@
   font-size: 1rem; /* baseline */
   position: relative;
   
-  @mixin atSmall {
-    padding: 0vh 0vw;
-  }
+  /* padding: clamp(16em, 16vw + 1em, 50em) clamp(2em, 2vw + 1em, 100em); */
 
+  padding: 10em 0;
+
+  @mixin atSmall {
+    padding: 14vh 5vw;
+  }
+  
   @mixin atMedium {
-    padding: 20vh 5vw;
+    padding: 20vh 8vw;
   }
 
   @mixin atLarge {
-    padding: 22vh 10vw;
+    padding: 24vh 13vw;
   }
 
   @mixin atXLarge {
-    padding: 24vh 15vw;
+    padding: 28vh 21vw;
   }
   
   @mixin atULarge {
-    padding: 26vh 20vw;
+    padding: 32vh 30vw;
   }
-  
-  /* mix-blend-mode: multiply; */
-
+ 
   /* EFFECTS */
   mix-blend-mode: overlay;
 

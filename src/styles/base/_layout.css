@@ -6,16 +6,17 @@
   @mixin supportsGrid {
     display: grid;
     grid-template-columns: 1fr 20fr 1fr;
-    grid-template-rows: 1fr min-content 1fr;
+    grid-template-rows: repeat(3, min-content);
     grid-template-areas:
-      ".     .            ."
-      ".     flowchart    ."
-      ".     .            .";
+      ".      header        ."
+      ".      .             ."
+      ".      footer        .";
   }
   /* background-color: rgba(255, 255, 255, 0.349); */
   
   &__overlay {
     &--background {
+      /* display: none !important; */
       @mixin supportsGrid {
         /* 
         If four <grid-line> values are specified,
@@ -60,18 +61,30 @@
     &--diagram {
       /* display: none !important; */
       @mixin supportsGrid {
-        grid-area: flowchart;
+        /* grid-area: flowchart; */
+        grid-area: 1 / 1 / -1 / -1;
       }
-      z-index: 30;          
+      z-index: 20;          
     }
 
     &--header {
+      /* display: none !important; */
       @mixin supportsGrid {
-        /* grid-area: header; */
-        grid-area: 1 / 1 / -1 / -1;
+        grid-area: header;
+        /* grid-area: 1 / 1 / -1 / -1; */
       }
-      z-index: 11;
+      z-index: 30;
       /* background-color: transparent !important;   */
     }
+
+    &--footer {
+      /* display: none !important; */
+      @mixin supportsGrid {
+        grid-area: footer;
+        /* grid-area: 1 / 1 / -1 / -1; */
+      }
+      z-index: 30;
+      /* background-color: transparent !important;   */
+    }    
   }
 }
