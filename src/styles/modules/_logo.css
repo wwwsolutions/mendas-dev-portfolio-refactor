@@ -10,7 +10,7 @@
       "logo_subtitle";
   }
 
-  width: min(50vw, 200px);
+  /* width: 50vmax; */
 
   @mixin atSmall {
     @mixin supportsGrid {
@@ -26,7 +26,7 @@
     }
 
     padding: 2% 4%;
-    width: clamp(25em, 35vw + 1em, 40em);
+    width: clamp(30vmax, 30vmax + 1em, 40vmax);
   }
 
   @mixin atMedium {

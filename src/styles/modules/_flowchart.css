@@ -17,12 +17,9 @@
   font-size: 1rem; /* baseline */
   position: relative;
   
-  /* padding: clamp(16em, 16vw + 1em, 50em) clamp(2em, 2vw + 1em, 100em); */
-
-  padding: 102vh 4vmax 30vmax 4vmax;
+  padding: 100vh 4vmax 30vmax 4vmax;
 
   @mixin atSmall {
-    /* padding: 20vh 12vw; */
     padding: 35vmax 10vmax 35vmax 10vmax;
   }
   
@@ -31,15 +28,15 @@
   }
 
   @mixin atLarge {
-    padding: 24vh 13vw;
+    padding: 25vmax 25vmax 25vmax 25vmax;
   }
 
   @mixin atXLarge {
-    padding: 28vh 21vw;
+    padding: 23vmax 30vmax 23vmax 30vmax;
   }
   
   @mixin atULarge {
-    padding: 32vh 30vw;
+    padding: 20vmax 35vmax 20vmax 35vmax;
   }
  
   /* EFFECTS */

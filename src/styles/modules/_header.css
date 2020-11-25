@@ -1,26 +1,19 @@
 .header {
-  display: flex;
+  /* display: flex; */
   font-size: 1rem; /* baseline */
   background: none;
   
   /* index.html */
   &--initial {
-    
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* width: 100%; */
-    /* height: 100%; */
+    @mixin flexCenter;
     
     @mixin atSmall {
-      display: block;
-      padding-top: clamp(4em, 4vmax + 1em, 10vmax);
-      margin: 0 auto;
+      padding: clamp(4em, 4vmax + 1em, 10vmax) 0;
+      justify-content: center;
     }
 
     @mixin atMedium {
-      /* padding-left: clamp(4em, 4vw + 1em, 10em); */
-      /* padding-top: clamp(4em, 4vw + 1em, 10em); */
+      justify-content: left;
       padding-top: clamp(4em, 4vmax + 1em, 10vmax);
     }
   }
