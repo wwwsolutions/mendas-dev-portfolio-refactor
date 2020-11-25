@@ -3,8 +3,17 @@
   width: 100%;
   height: 100%;
 
-  @mixin supportsGrid {
+  display: grid;
+  grid-template-columns: 1fr 20fr 1fr;
+  grid-template-rows: 100vh repeat(2, min-content);
+  grid-template-areas:
+    "header      header        header"
+    ".      .             ."
+    ".      footer        .";
+
+  @mixin atSmall {
     display: grid;
+    /* display: none; */
     grid-template-columns: 1fr 20fr 1fr;
     grid-template-rows: repeat(3, min-content);
     grid-template-areas:
@@ -12,6 +21,30 @@
       ".      .             ."
       ".      footer        .";
   }
+
+  @mixin atMedium {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: repeat(3, min-content);
+      grid-template-areas:
+        ".      header        ."
+        ".      .             ."
+        ".      footer        .";
+    }
+  }
+  @mixin atLarge {
+    display: none;
+  }
+
+  @mixin atXLarge {
+    display: none;
+  }
+
+  @mixin atULarge {
+    display: none;
+  }
+
   /* background-color: rgba(255, 255, 255, 0.349); */
   
   &__overlay {

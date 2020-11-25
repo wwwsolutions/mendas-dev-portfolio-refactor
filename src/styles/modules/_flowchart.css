@@ -19,14 +19,15 @@
   
   /* padding: clamp(16em, 16vw + 1em, 50em) clamp(2em, 2vw + 1em, 100em); */
 
-  padding: 10em 0;
+  padding: 102vh 4vmax 30vmax 4vmax;
 
   @mixin atSmall {
-    padding: 14vh 5vw;
+    /* padding: 20vh 12vw; */
+    padding: 35vmax 10vmax 35vmax 10vmax;
   }
   
   @mixin atMedium {
-    padding: 20vh 8vw;
+    padding: 32vmax 20vmax 32vmax 20vmax;
   }
 
   @mixin atLarge {
