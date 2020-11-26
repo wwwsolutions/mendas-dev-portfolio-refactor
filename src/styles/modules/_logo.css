@@ -10,7 +10,7 @@
       "logo_subtitle";
   }
 
-  width: min(50vw, 200px);
+  max-width: 30vmax;
 
   @mixin atSmall {
     @mixin supportsGrid {
@@ -24,13 +24,12 @@
         "logo_icon        .";
       gap: 0 4%;
     }
-
     padding: 2% 4%;
-    width: clamp(25em, 35vw + 1em, 40em);
+    max-width: 40vmax;
   }
 
   @mixin atMedium {
-    /* background-color: rgba(0, 0, 0, 0.125); */
+    width: clamp(35vmax, 35vw + 1em, 45vmax);
   }
 }
 

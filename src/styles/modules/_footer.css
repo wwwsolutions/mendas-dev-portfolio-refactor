@@ -1,9 +1,35 @@
 .footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  font-family: "Open Sans Condensed", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  opacity: 0.7;
+
+  @mixin flexVerticalCenter;
+  /* align-items: center; */
+  justify-content: space-between;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+  /* align-content: stretch; */
+  /* align-items: center; */
+  /* height: 100%; */
+  
+  /* EFFECTS */
+  mix-blend-mode: overlay;
+  
+  &__message {
+    color: white;
+  }
+
+  &__lnk {
+    color: white;
+  }
 
   @mixin atMedium {
+    font-size: clamp(1.4em, 4vmax + 1em, 1.4vmax);
     flex-direction: row;
     justify-content: space-between;
     /* margin-top: 10vmin; */
