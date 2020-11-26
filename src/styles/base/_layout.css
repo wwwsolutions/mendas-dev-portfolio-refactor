@@ -5,7 +5,7 @@
 
   display: grid;
   grid-template-columns: 1fr 20fr 1fr;
-  grid-template-rows: 100vh repeat(2, min-content);
+  grid-template-rows: 100vh min-content 30vmax;
   grid-template-areas:
     "header      header        header"
     ".      .             ."
@@ -14,7 +14,7 @@
   @mixin atSmall {
     display: grid;
     grid-template-columns: 1fr 20fr 1fr;
-    grid-template-rows: repeat(3, min-content);
+    grid-template-rows: min-content min-content 33vmax;
     grid-template-areas:
       ".      header        ."
       ".      .             ."
@@ -25,7 +25,7 @@
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: repeat(3, min-content);
+      grid-template-rows: min-content min-content 20vmax;
       grid-template-areas:
         ".      header        ."
         ".      .             ."
@@ -36,7 +36,7 @@
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: repeat(3, min-content);
+      grid-template-rows: min-content min-content 20vh;
       grid-template-areas:
         ". header        ."
         ".      .             ."
@@ -48,7 +48,7 @@
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: repeat(3, min-content);
+      grid-template-rows: min-content min-content 20vh;
       grid-template-areas:
         ". header        ."
         ".      .             ."

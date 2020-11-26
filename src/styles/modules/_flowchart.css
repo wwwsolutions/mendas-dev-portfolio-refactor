@@ -17,10 +17,10 @@
   font-size: 1rem; /* baseline */
   position: relative;
   
-  padding: 100vh 4vmax 30vmax 4vmax;
+  padding: 100vh 4vmax 40vmax 4vmax;
 
   @mixin atSmall {
-    padding: 35vmax 10vmax 35vmax 10vmax;
+    padding: 35vmax 10vmax 50vmax 10vmax;
   }
   
   @mixin atMedium {
