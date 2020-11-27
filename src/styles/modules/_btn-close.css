@@ -1,0 +1,9 @@
+/* TODO: MAKE IT INTERACTIVE */
+
+.btn-close {
+  display: block;
+  /* width: 5em; */
+  /* height: 2.8em; */
+  height: clamp(2.8em, 2.8em + 1em, 3.5em);
+  cursor: pointer;
+}

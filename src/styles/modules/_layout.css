@@ -1,32 +1,36 @@
 .layout {
   display: grid;
-  gap: 100px 0;
+  gap: 0;
   grid-template-columns: 1fr 20fr 1fr;
-  grid-template-rows: 100vh auto 200px;
+  grid-template-rows: 10vh 90vh auto 200px;
   grid-template-areas:
-    "header      header        header"
-    ".      diagram             ."
-    ".      footer        .";
+    ".        close       close"
+    "header   header      header"
+    ".        diagram     .     "
+    ".        footer      .     ";
 
   @mixin atSmall {
+    gap: 3em 0;
     display: grid;
     grid-template-columns: 1fr 20fr 1fr;
-    grid-template-rows: min-content auto 200px;
+    grid-template-rows: 10em min-content auto 200px;
     grid-template-areas:
-      ".      header        ."
-      ".      diagram             ."
-      ".      footer        .";
+      ".      close        close"
+      ".      header       ."
+      ".      diagram      ."
+      ".      footer       .";
   }
 
   @mixin atMedium {
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: min-content auto 10vmax;
+      grid-template-rows: 10em min-content auto 10vmax;
       grid-template-areas:
-        ".      header        ."
-        ".      diagram             ."
-        ".      footer        .";
+        ".      close        close"
+        ".      header       ."
+        ".      diagram      ."
+        ".      footer       .";
     }
   }
 
@@ -34,11 +38,12 @@
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: min-content auto 10vmax;
+      grid-template-rows: 10em min-content auto 10vmax;
       grid-template-areas:
-        ". header        ."
-        ".      diagram             ."
-        ".      footer        .";
+        ".      .        close"
+        ".      header       ."
+        ".      diagram      ."
+        ".      footer       .";
     }
   }
 
@@ -46,11 +51,12 @@
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: min-content auto 8vmax;
+      grid-template-rows: 10em min-content auto 8vmax;
       grid-template-areas:
-        ". header        ."
-        ".      diagram             ."
-        ".      footer        .";
+        ".      .        close"
+        ".      header       ."
+        ".      diagram      ."
+        ".      footer       .";
     }
   }
 
@@ -58,11 +64,25 @@
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: min-content auto 6vmax;
+      grid-template-rows: 10em min-content auto 6vmax;
       grid-template-areas:
-        ". header        ."
-        ".      diagram             ."
-        ".      footer        .";
+        ".      .            close"
+        ".      header       ."
+        ".      diagram      ."
+        ".      footer       .";
+    }
+  }
+
+  /* CLOSE BUTTON */
+  &__close {
+    mix-blend-mode: normal;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    @mixin supportsGrid {
+      grid-area: close;
     }
   }
 
@@ -72,7 +92,7 @@
     mix-blend-mode: overlay;
     font-size: 1rem; /* baseline */
     z-index: 30;
-    width: 100%;
+    /* width: 100%; */
 
     @mixin supportsGrid {
       grid-area: header;
@@ -82,13 +102,13 @@
       @mixin flexCenter;
     
       @mixin atSmall {
-        padding: clamp(4em, 4vmax + 1em, 10vmax) 0;
         justify-content: center;
+        /* padding: clamp(4em, 4vmax + 1em, 10vmax) 0; */
       }
   
       @mixin atMedium {
         justify-content: left;
-        padding-top: clamp(4em, 4vmax + 1em, 10vmax);
+        /* padding-top: clamp(4em, 4vmax + 1em, 10vmax); */
       }
     }
   
