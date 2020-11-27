@@ -29,7 +29,7 @@ $logoColor: black;
   }
 
   @mixin atMedium {
-    width: clamp(35vmax, 35vw + 1em, 45vmax);
+    width: clamp(32em, 5vw + 1em, 38em);
   }
 
   &__element {

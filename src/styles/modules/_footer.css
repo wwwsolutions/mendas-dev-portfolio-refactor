@@ -20,7 +20,7 @@ $footerLinkColor: hsla(0, 50%, 90%, 1);
   }
 
   @mixin atMedium {
-    font-size: clamp(1.4em, 4vmax + 1em, 1.4vmax);
+    /* font-size: clamp(1.4em, 4vmax + 1em, 1.6em); */
     flex-direction: row;
     justify-content: space-between;
   }

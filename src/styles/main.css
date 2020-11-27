@@ -48,10 +48,11 @@ usage:
 @import "base/_global";
 @import "base/_gradients";
 @import "base/_background";
-/* @import "base/_layout"; */
 
 /* ★ MODULES */
 @import "modules/_layout";
+@import "modules/_btn-close";
+@import "modules/_scroll-icon";
 
 @import "modules/_flowchart";
 
