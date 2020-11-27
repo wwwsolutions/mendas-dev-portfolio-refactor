@@ -1,7 +1,8 @@
 .layout {
   display: grid;
+  gap: 100px 0;
   grid-template-columns: 1fr 20fr 1fr;
-  grid-template-rows: 100vh min-content 200px;
+  grid-template-rows: 100vh auto 200px;
   grid-template-areas:
     "header      header        header"
     ".      diagram             ."
@@ -10,7 +11,7 @@
   @mixin atSmall {
     display: grid;
     grid-template-columns: 1fr 20fr 1fr;
-    grid-template-rows: min-content min-content 200px;
+    grid-template-rows: min-content auto 200px;
     grid-template-areas:
       ".      header        ."
       ".      diagram             ."
@@ -21,7 +22,7 @@
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: min-content min-content 20vmax;
+      grid-template-rows: min-content auto 10vmax;
       grid-template-areas:
         ".      header        ."
         ".      diagram             ."
@@ -33,7 +34,7 @@
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: min-content min-content min-content;
+      grid-template-rows: min-content auto 10vmax;
       grid-template-areas:
         ". header        ."
         ".      diagram             ."
@@ -45,7 +46,7 @@
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: min-content min-content 20vh;
+      grid-template-rows: min-content auto 10vmax;
       grid-template-areas:
         ". header        ."
         ".      diagram             ."
@@ -57,7 +58,7 @@
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: repeat(3, min-content);
+      grid-template-rows: min-content auto 10vmax;
       grid-template-areas:
         ". header        ."
         ".      diagram             ."
