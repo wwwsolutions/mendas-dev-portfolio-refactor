@@ -23,27 +23,26 @@ $shapeFillTextInverted: hsla(0, 0%, 60%, 1);
   }
      
   padding: 0;
-  /* 
+
   @mixin atSmall {
-    padding: 35vmax 10vmax 50vmax 10vmax;
+    padding: 0 2vmax;
   }
-  
+
   @mixin atMedium {
-    padding: 32vmax 20vmax 32vmax 20vmax;
+    padding: 0 4vmax;
   }
 
   @mixin atLarge {
-    padding: 25vmax 25vmax 25vmax 25vmax;
+    padding: 0 8vmax;
   }
 
   @mixin atXLarge {
-    padding: 23vmax 30vmax 23vmax 30vmax;
+    padding: 0 16vmax;
   }
-  
+
   @mixin atULarge {
-    padding: 20vmax 35vmax 20vmax 35vmax;
+    padding: 0 24vmax;
   }
-  */
   
   & .shape--button .shape__rect--inverted {
     transition: all .6s;
