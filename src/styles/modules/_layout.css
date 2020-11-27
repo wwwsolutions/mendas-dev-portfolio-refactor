@@ -46,7 +46,7 @@
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: min-content auto 10vmax;
+      grid-template-rows: min-content auto 8vmax;
       grid-template-areas:
         ". header        ."
         ".      diagram             ."
@@ -58,7 +58,7 @@
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: min-content auto 10vmax;
+      grid-template-rows: min-content auto 6vmax;
       grid-template-areas:
         ". header        ."
         ".      diagram             ."
