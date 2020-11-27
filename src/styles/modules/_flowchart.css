@@ -4,6 +4,8 @@ $shapeFillTextInverted: hsla(0, 0%, 60%, 1);
 
 .flowchart {
   font-size: 1rem; /* baseline */
+  font-family: "Nunito Sans", sans-serif;
+
   @mixin supportsGrid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
