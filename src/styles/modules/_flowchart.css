@@ -1,4 +1,11 @@
+$shapeFill: black;
+$shapeStroke: black;
+$shapeFillTextInverted: hsla(0, 0%, 60%, 1);
+
 .flowchart {
+  font-size: 1rem; /* baseline */
+  font-family: "Nunito Sans", sans-serif;
+
   @mixin supportsGrid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -14,42 +21,28 @@
       "pt2      pt2       pt2         .           .           .      "
       ".        .         end         end         .           .      ";
   }
-  font-size: 1rem; /* baseline */
-  position: relative;
-  
-  padding: 100vh 4vmax 40vmax 4vmax;
+     
+  padding: 0;
 
   @mixin atSmall {
-    padding: 35vmax 10vmax 50vmax 10vmax;
+    padding: 0 2vmax;
   }
-  
+
   @mixin atMedium {
-    padding: 32vmax 20vmax 32vmax 20vmax;
+    padding: 0 4vmax;
   }
 
   @mixin atLarge {
-    padding: 25vmax 25vmax 25vmax 25vmax;
+    padding: 0 8vmax;
   }
 
   @mixin atXLarge {
-    padding: 23vmax 30vmax 23vmax 30vmax;
+    padding: 0 16vmax;
   }
-  
+
   @mixin atULarge {
-    padding: 20vmax 35vmax 20vmax 35vmax;
+    padding: 0 24vmax;
   }
- 
-  /* EFFECTS */
-  mix-blend-mode: overlay;
-
-  & div {
-    /* 
-      mix-blend-mode: screen;
-    */
-    /* display: flex; */
-    mix-blend-mode: overlay;
-  }
-
   
   & .shape--button .shape__rect--inverted {
     transition: all .6s;
@@ -58,29 +51,7 @@
       cursor: pointer;
       fill: hsla(0, 0%, 0%, 0);
       stroke: hsla(128, 100%, 0%, 1);
-      /* stroke: white; */
-      /* border: 5px solid red; */
     }
-  }
-
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 52%;
-    width: 102vw;
-    /* height: 100%; */
-    height: 100%;
-    transform: translateX(-52%);
-    z-index: -1;
-    opacity: 0.7;
-    box-sizing: border-box;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: $gradient-top-left-mixed, url($bgDefaultImageUrl);
-    background-blend-mode: color;
   }
 
   /* rectangles */
@@ -98,7 +69,7 @@
 
   /* rectangles / buttons */
   &__btn {
-    /* display: flex; */
+    height: 0;
 
     &--about {
       @mixin supportsGrid {
@@ -121,39 +92,7 @@
       }
     }
   }
-  /* 
-  &__about {
-    @mixin supportsGrid {
-      grid-area: about;
-    }
 
-    display: flex;
-  }
-
-  &__contact {
-    @mixin supportsGrid {
-      grid-area: contact;
-    }
-
-    display: flex;
-  }
-
-  &__portfolio {
-    @mixin supportsGrid {
-      grid-area: port;
-    }
-
-    display: flex;
-  }
-
-  &__stack {
-    @mixin supportsGrid {
-      grid-area: stack;
-    }
-
-    display: flex;
-  }
- */
   /* rectangles / diamonds */
   &__d1 {
     @mixin supportsGrid {
@@ -195,6 +134,95 @@
   &__pt5 {
     @mixin supportsGrid {
       grid-area: pt5;
+    }
+  }
+}
+
+/* svg / shapes */
+.shape {
+  display: block;
+  overflow: visible;
+
+  &--center {
+    margin: 0 auto;
+  }
+
+  &--pull-up {
+    transform: translateY(-45%);
+  }
+  &--pull-down {
+    transform: translateY(65%);
+  }
+
+  &--medium {
+    width: 75%;
+  }
+
+  &__rect {
+    stroke: $shapeStroke;
+    stroke-width: 4;
+    fill: none;
+
+    &--inverted {
+      fill: $shapeFill;
+      stroke: $shapeStroke;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: $shapeStroke;
+    stroke-width: 4;
+
+    &--no-stroke {
+      stroke: none !important;
+    }
+
+    &--thinnest {
+      stroke-width: 1;
+    }
+
+    &--thin {
+      stroke-width: 2;
+    }
+
+    &--dashed {
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      stroke-width: 3;
+      stroke-dasharray: 3;
+    }
+
+    &--filled {
+      fill: $shapeFill;
+      stroke: none;
+    }
+  }
+
+  &__text {
+    fill: $shapeFill;
+    font-weight: 600;
+
+    &--inverted {
+      fill: $shapeFillTextInverted;
+    }
+
+    &--smaller {
+      font-size: 1.65em;
+    }
+
+    &--normal {
+      font-size: 1.8em;
+    }
+
+    &--capitalize {
+      text-transform: capitalize;
+    }
+
+    &--uppercase {
+      text-transform: uppercase;
     }
   }
 }

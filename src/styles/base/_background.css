@@ -26,12 +26,44 @@ $gradient-radial: radial-gradient(
 
   /* gradients */
   &--gradient-light {
-    background-image: $gradient-top-left-mixed, url($bgDefaultImageUrl);
-    /* background-blend-mode: color; */
+    background-image: $gradient-top-left-mixed, url($bgImageUrl1920x2408);
+    background-blend-mode: color;
   }
 
   &--gradient-radial-light {
-    background-image: $gradient-radial, url($bgDefaultImageUrl);
+    background-image: $gradient-radial, url($bgImageUrl1920x2408);
     background-blend-mode: color;
+  }
+
+  &--test {
+    $gradient-a: linear-gradient(
+      220deg,
+      $stPatricksBlueLighter,
+      $orangeYellowDark,
+      $persianGreenBase,
+      $darkPurpleBase
+    );
+  
+    $gradient-c: linear-gradient(
+      330deg,
+      $stPatricksBlueLighter,
+      $orangeYellowDark,
+      $persianGreenBase,
+      $darkPurpleBase
+    );
+  
+    $gradient-b: linear-gradient(
+      260deg,
+      rgb(95, 95, 255),
+      rgb(218, 218, 218)
+    );
+    
+    opacity: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: white;
+    background-image: url($bgImageUrl1920x2408), url($bgImageUrl1920x2408), $gradient-a, $gradient-b, $gradient-c;
+    background-blend-mode: lighten, screen, hard-light, exclusion;
   }
 }

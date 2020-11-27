@@ -1,15 +1,12 @@
 /* source: https://codepen.io/karloespiritu/pen/pJNRqV?editors=1100 */
 
-.social-links {
-  /*   @mixin supportsGrid {
-    grid-area: social;
-  } */
+$socialLinkColor: hsla(0, 0%, 100%, 1);
 
+.social-links {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   list-style: none;
-  margin-bottom: 4em;
 
   @mixin atMedium {
     margin: 4em 0;
@@ -37,7 +34,7 @@
     outline: none;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.7);
+    border: 1px solid $socialLinkColor;
   }
 
   &__icon {
@@ -46,6 +43,6 @@
   }
 
   &__icon-path {
-    fill: rgba(255, 255, 255, 0.7);
+    fill: $socialLinkColor;
   }
 }
