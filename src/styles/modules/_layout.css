@@ -65,31 +65,67 @@
     }
   }
 
-  &__overlay {
+  /* HEADER */
+  &__header {
+    /* mix-blend-mode: normal; */
     mix-blend-mode: overlay;
+    font-size: 1rem; /* baseline */
+    z-index: 30;
+    width: 100%;
 
-    &--header {
-      /* mix-blend-mode: normal; */
-      z-index: 30;
-      @mixin supportsGrid {
-        grid-area: header;
-      }
+    @mixin supportsGrid {
+      grid-area: header;
     }
+
+    &--initial {
+      @mixin flexCenter;
     
-    &--diagram {
-      /* mix-blend-mode: normal; */
-      z-index: 20;
-      @mixin supportsGrid {
-        grid-area: diagram;
+      @mixin atSmall {
+        padding: clamp(4em, 4vmax + 1em, 10vmax) 0;
+        justify-content: center;
+      }
+  
+      @mixin atMedium {
+        justify-content: left;
+        padding-top: clamp(4em, 4vmax + 1em, 10vmax);
       }
     }
-
-    &--footer {
-      /* mix-blend-mode: normal; */
-      z-index: 30;
+  
+    &--standard {
+      height: 20vh;
       @mixin supportsGrid {
-        grid-area: footer;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr min-content 5fr min-content 3fr min-content 6fr;
+        grid-template-areas:
+          ".          "
+          "btn_close  "
+          ".          "
+          "headline   "
+          ".          "
+          "scroll_icon"
+          ".          ";
       }
-    }    
+    }
   }
+
+  /* DIAGRAM */
+  &__diagram {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 20;
+    @mixin supportsGrid {
+      grid-area: diagram;
+    }
+  }
+
+  /* FOOTER */  
+  &__footer {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 30;
+    @mixin supportsGrid {
+      grid-area: footer;
+    }
+  }    
 }
