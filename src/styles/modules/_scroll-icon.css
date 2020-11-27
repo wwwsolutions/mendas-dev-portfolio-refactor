@@ -1,0 +1,21 @@
+.scroll-icon {
+  height: 6em;
+  width: 6em;
+  /* margin: 0 auto; */
+
+  &__mouse {
+    animation: movement 0.8s ease infinite alternate;
+  }
+}
+
+@keyframes movement {
+  0% {
+    transform: translateY(0px);
+    opacity: 0.25;
+  }
+
+  100% {
+    transform: translateY(10px);
+    opacity: 0.75;
+  }
+}

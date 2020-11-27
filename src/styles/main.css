@@ -52,6 +52,7 @@ usage:
 /* ★ MODULES */
 @import "modules/_layout";
 @import "modules/_btn-close";
+@import "modules/_scroll-icon";
 
 @import "modules/_flowchart";
 

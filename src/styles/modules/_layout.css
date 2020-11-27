@@ -2,10 +2,11 @@
   display: grid;
   gap: 0;
   grid-template-columns: 1fr 20fr 1fr;
-  grid-template-rows: 10vh 90vh auto 200px;
+  grid-template-rows: 10vh 70vh 20vh auto 200px;
   grid-template-areas:
     ".        close       close"
     "header   header      header"
+    ".        scroll      ."
     ".        diagram     .     "
     ".        footer      .     ";
 
@@ -38,10 +39,9 @@
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: 10em min-content auto 10vmax;
+      grid-template-rows: 15em auto 10vmax;
       grid-template-areas:
-        ".      .        close"
-        ".      header       ."
+        ".      header        close"
         ".      diagram      ."
         ".      footer       .";
     }
@@ -51,10 +51,9 @@
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: 10em min-content auto 8vmax;
+      grid-template-rows: 15em auto 8vmax;
       grid-template-areas:
-        ".      .        close"
-        ".      header       ."
+        ".      header        close"
         ".      diagram      ."
         ".      footer       .";
     }
@@ -64,10 +63,9 @@
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: 10em min-content auto 6vmax;
+      grid-template-rows: 15em auto 6vmax;
       grid-template-areas:
-        ".      .            close"
-        ".      header       ."
+        ".      header            close"
         ".      diagram      ."
         ".      footer       .";
     }
@@ -78,11 +76,30 @@
     mix-blend-mode: normal;
     z-index: 30;
     display: flex;
-    align-items: center;
-    margin-left: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
 
     @mixin supportsGrid {
       grid-area: close;
+    }
+  }
+
+  /* SCROLL INDICATOR BUTTON */
+  &__scroll-indicator {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 30;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    visibility: visible;
+    @mixin supportsGrid {
+      grid-area: scroll;
+    }
+
+    @mixin atSmall {
+      display: none;
     }
   }
 
