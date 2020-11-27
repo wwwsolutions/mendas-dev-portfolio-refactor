@@ -69,24 +69,27 @@
     mix-blend-mode: overlay;
 
     &--header {
+      /* mix-blend-mode: normal; */
+      z-index: 30;
       @mixin supportsGrid {
         grid-area: header;
       }
-      z-index: 30;
     }
     
     &--diagram {
+      /* mix-blend-mode: normal; */
+      z-index: 20;
       @mixin supportsGrid {
         grid-area: diagram;
       }
-      z-index: 20;          
     }
 
     &--footer {
+      /* mix-blend-mode: normal; */
+      z-index: 30;
       @mixin supportsGrid {
         grid-area: footer;
       }
-      z-index: 30;
     }    
   }
 }

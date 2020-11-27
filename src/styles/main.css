@@ -52,7 +52,7 @@ usage:
 
 /* ★ MODULES */
 @import "modules/_flowchart";
-@import "modules/_shapes";
+/* @import "modules/_shapes"; */
 
 @import "modules/_header";
 @import "modules/_logo";

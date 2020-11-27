@@ -1,3 +1,7 @@
+$shapeFill: black;
+$shapeStroke: black;
+$shapeFillTextInverted: hsla(0, 0%, 60%, 1);
+
 .flowchart {
   font-size: 1rem; /* baseline */
   @mixin supportsGrid {
@@ -46,8 +50,6 @@
       cursor: pointer;
       fill: hsla(0, 0%, 0%, 0);
       stroke: hsla(128, 100%, 0%, 1);
-      /* stroke: white; */
-      /* border: 5px solid red; */
     }
   }
 
@@ -66,7 +68,7 @@
 
   /* rectangles / buttons */
   &__btn {
-    /* display: flex; */
+    height: 0;
 
     &--about {
       @mixin supportsGrid {
@@ -131,6 +133,95 @@
   &__pt5 {
     @mixin supportsGrid {
       grid-area: pt5;
+    }
+  }
+}
+
+/* svg / shapes */
+.shape {
+  display: block;
+  overflow: visible;
+
+  &--center {
+    margin: 0 auto;
+  }
+
+  &--pull-up {
+    transform: translateY(-45%);
+  }
+  &--pull-down {
+    transform: translateY(65%);
+  }
+
+  &--medium {
+    width: 75%;
+  }
+
+  &__rect {
+    stroke: $shapeStroke;
+    stroke-width: 4;
+    fill: none;
+
+    &--inverted {
+      fill: $shapeFill;
+      stroke: $shapeStroke;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: $shapeStroke;
+    stroke-width: 4;
+
+    &--no-stroke {
+      stroke: none !important;
+    }
+
+    &--thinnest {
+      stroke-width: 1;
+    }
+
+    &--thin {
+      stroke-width: 2;
+    }
+
+    &--dashed {
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      stroke-width: 3;
+      stroke-dasharray: 3;
+    }
+
+    &--filled {
+      fill: $shapeFill;
+      stroke: none;
+    }
+  }
+
+  &__text {
+    fill: $shapeFill;
+    font-weight: 600;
+
+    &--inverted {
+      fill: $shapeFillTextInverted;
+    }
+
+    &--smaller {
+      font-size: 1.65em;
+    }
+
+    &--normal {
+      font-size: 1.8em;
+    }
+
+    &--capitalize {
+      text-transform: capitalize;
+    }
+
+    &--uppercase {
+      text-transform: uppercase;
     }
   }
 }
