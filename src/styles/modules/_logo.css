@@ -1,4 +1,7 @@
+$logoColor: black;
+
 .logo {
+  max-width: 30vmax;
   @mixin supportsGrid {
     grid-area: logo;
     display: grid;
@@ -9,8 +12,6 @@
       "logo_title"
       "logo_subtitle";
   }
-
-  max-width: 30vmax;
 
   @mixin atSmall {
     @mixin supportsGrid {
@@ -24,81 +25,78 @@
         "logo_icon        .";
       gap: 0 4%;
     }
-    padding: 2% 4%;
     max-width: 40vmax;
   }
 
   @mixin atMedium {
     width: clamp(35vmax, 35vw + 1em, 45vmax);
   }
-}
 
-.logo__element {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  fill: none;
-}
-
-.logo__icon {
-  @mixin supportsGrid {
-    grid-area: logo_icon;
-  }
-}
-
-.logo__title {
-  @mixin supportsGrid {
-    grid-area: logo_title;
-  }
-}
-
-.logo__subtitle {
-  @mixin supportsGrid {
-    grid-area: logo_subtitle;
-  }
-}
-
-.logo__shape {
-  overflow: visible;
-}
-
-.logo__path {
-  width: 100%;
-  height: 100%;
-  fill: none;
-  stroke: none;
-
-  &--no-stroke {
-    stroke: none;
-  }
-
-  &--no-fill {
+  &__element {
+    display: flex;
+    width: 100%;
+    height: 100%;
     fill: none;
   }
-
-  &--thinnest {
-    stroke-width: 2;
+  
+  &__icon {
+    @mixin supportsGrid {
+      grid-area: logo_icon;
+    }
   }
-
-  &--thin {
-    stroke-width: 4;
+  
+  &__title {
+    @mixin supportsGrid {
+      grid-area: logo_title;
+    }
   }
-
-  &--filled {
-    fill: $whiteLighter;
-    fill: hsla(0, 66%, 20%, 0.75);
+  
+  &__subtitle {
+    @mixin supportsGrid {
+      grid-area: logo_subtitle;
+    }
   }
-
-  &--colorized {
-    stroke: $whiteLighter;
-    stroke: hsla(0, 66%, 20%, 0.75);
+  
+  &__shape {
+    overflow: visible;
   }
-
-  &--pull-up {
-    transform: translateY(-5%);
-  }
-
-  &--pull-down {
-    transform: translateY(50%);
+  
+  &__path {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: none;
+  
+    &--no-stroke {
+      stroke: none;
+    }
+  
+    &--no-fill {
+      fill: none;
+    }
+  
+    &--thinnest {
+      stroke-width: 2;
+    }
+  
+    &--thin {
+      stroke-width: 4;
+    }
+  
+    &--filled {
+      fill: $logoColor;
+    }
+  
+    &--colorized {
+      stroke: $logoColor;
+    }
+  
+    &--pull-up {
+      transform: translateY(-5%);
+    }
+  
+    &--pull-down {
+      transform: translateY(50%);
+    }
   }
 }

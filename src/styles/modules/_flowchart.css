@@ -1,4 +1,5 @@
 .flowchart {
+  font-size: 1rem; /* baseline */
   @mixin supportsGrid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -14,10 +15,7 @@
       "pt2      pt2       pt2         .           .           .      "
       ".        .         end         end         .           .      ";
   }
-  font-size: 1rem; /* baseline */
-  /* position: relative; */
      
-  /* padding: 0 0 4vmax 0; */
   padding: 0;
   /* 
   @mixin atSmall {
@@ -40,17 +38,6 @@
     padding: 20vmax 35vmax 20vmax 35vmax;
   }
   */
-  /* EFFECTS */
-  mix-blend-mode: overlay;
-
-  & div {
-    /* 
-      mix-blend-mode: screen;
-    */
-    /* display: flex; */
-    mix-blend-mode: overlay;
-  }
-
   
   & .shape--button .shape__rect--inverted {
     transition: all .6s;
@@ -102,39 +89,7 @@
       }
     }
   }
-  /* 
-  &__about {
-    @mixin supportsGrid {
-      grid-area: about;
-    }
 
-    display: flex;
-  }
-
-  &__contact {
-    @mixin supportsGrid {
-      grid-area: contact;
-    }
-
-    display: flex;
-  }
-
-  &__portfolio {
-    @mixin supportsGrid {
-      grid-area: port;
-    }
-
-    display: flex;
-  }
-
-  &__stack {
-    @mixin supportsGrid {
-      grid-area: stack;
-    }
-
-    display: flex;
-  }
- */
   /* rectangles / diamonds */
   &__d1 {
     @mixin supportsGrid {

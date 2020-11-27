@@ -1,7 +1,4 @@
 .layout {
-  /* position: relative; */
-  height: 100%;
-
   display: grid;
   grid-template-columns: 1fr 20fr 1fr;
   grid-template-rows: 100vh min-content 30vmax;
@@ -36,7 +33,6 @@
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      /* grid-template-rows: min-content min-content 20vh; */
       grid-template-rows: min-content min-content min-content;
       grid-template-areas:
         ". header        ."
@@ -69,53 +65,28 @@
     }
   }
 
-  /* background-color: rgba(255, 255, 255, 0.349); */
-
   &__overlay {
-    &--background {
-      /* display: none !important; */
-      @mixin supportsGrid {
-        /* 
-        If four <grid-line> values are specified,
-        grid-row-start is set to the first value,
-        grid-column-start is set to the second value,
-        grid-row-end is set to the third value,
-        and grid-column-end is set to the fourth value.
-        */
-        grid-area: 1 / 1 / -1 / -1;
-      }
-      z-index: 10;
-    }
+    mix-blend-mode: overlay;
 
     &--header {
-      /* display: none !important; */
       @mixin supportsGrid {
         grid-area: header;
-        /* grid-area: 1 / 1 / -1 / -1; */
       }
       z-index: 30;
-      /* background-color: transparent !important;   */
-      mix-blend-mode: overlay;
     }
     
     &--diagram {
-      /* background-color: #fff !important; */      
-      /* display: none !important; */
       @mixin supportsGrid {
         grid-area: diagram;
-        /* grid-area: 1 / 1 / -1 / -1; */
       }
       z-index: 20;          
     }
 
     &--footer {
-      /* display: none !important; */
       @mixin supportsGrid {
         grid-area: footer;
-        /* grid-area: 1 / 1 / -1 / -1; */
       }
       z-index: 30;
-      /* background-color: transparent !important;   */
     }    
   }
 }
