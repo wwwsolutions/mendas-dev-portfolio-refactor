@@ -64,3 +64,6 @@ usage:
 
 @import "modules/_description";
 @import "modules/_stack-board";
+
+@import "modules/_profile";
+

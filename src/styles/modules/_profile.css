@@ -1,0 +1,88 @@
+.profile {
+  font-size: 1rem; /* control the size of the card */
+  width: 100%;
+  font-family: "dosis", sans-serif;
+  background-color: $orangeYellowDark;
+
+  @mixin supportsGrid {
+    align-self: center;
+    justify-self: center;
+
+    display: grid;
+    grid-template-columns: 42% auto 50%;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-areas:
+      "profile_motto    portrait    portrait"
+      "profile_motto    .           profile_text";
+  }
+
+  @mixin atSmall {
+    font-size: 0.65rem;
+    width: 38.75em;
+    border-radius: 0 50% 0 50%;
+  }
+
+  @mixin atMedium {
+    font-size: 0.7rem;
+  }
+
+  @mixin atLarge {
+    font-size: 0.9rem;
+  }
+
+  &__title {
+    @mixin supportsGrid {
+      grid-area: profile_motto;
+      /*  align-self: center; */
+      /* justify-self: center; */
+    }
+    padding: 1em;
+    font-size: 3em;
+    font-weight: 400;
+    line-height: 175%;
+    color: $stPatricksBlueDarker;
+    position: relative;
+    text-transform: capitalize;
+  }
+
+  &__text {
+    @mixin supportsGrid {
+      grid-area: profile_text;
+    }
+  
+    text-align: center;
+    /* height: 100%; */
+    min-height: 12em;
+    padding-top: 13%;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-weight: 100;
+    background-color: $persianGreenDarker;
+    font-size: 1.25em;
+    line-height: 150%;
+    position: relative;
+
+    @mixin atMedium {
+      font-size: 1.6em;
+      /* line-height: 2em; */
+    }
+  }
+
+  &__portrait {
+    @mixin supportsGrid {
+      grid-area: portrait;
+    }
+  
+    display: flex;
+    justify-self: flex-end;
+    align-self: flex-end;
+    z-index: 20;
+    filter: drop-shadow(-22px -12px 13px #222);
+
+    &__photo {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
