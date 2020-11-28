@@ -384,3 +384,107 @@
     }
   }    
 }
+
+[data-page="about"] .layout {
+  display: grid;
+  gap: 0;
+  grid-template-columns: 1fr 20fr 1fr;
+  grid-template-rows: 10vh auto 200px;
+  grid-template-areas:
+    ".        close       close"
+    ".        content     .     "
+    ".        footer      .     ";
+
+  @mixin atSmall {
+    gap: 3em 0;
+    display: grid;
+    grid-template-columns: 1fr 20fr 1fr;
+    grid-template-rows: 10em auto 200px;
+    grid-template-areas:
+      ".      close        close"
+      ".      content      ."
+      ".      footer       .";
+  }
+
+  @mixin atMedium {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 10vmax;
+      grid-template-areas:
+        ".      close        close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atLarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 10vmax;
+      grid-template-areas:
+        ".      .            close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atXLarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 8vmax;
+      grid-template-areas:
+        ".      .            close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atULarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 6vmax;
+      grid-template-areas:
+        ".      .            close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  /* CLOSE BUTTON */
+  &__close {
+    mix-blend-mode: normal;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    @mixin supportsGrid {
+      grid-area: close;
+    }
+  }
+
+  /* CONTENT */
+  &__content {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 20;
+    @mixin supportsGrid {
+      grid-area: content;
+    }
+  }
+
+  /* FOOTER */  
+  &__footer {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 30;
+    @mixin supportsGrid {
+      grid-area: footer;
+    }
+  }    
+}
