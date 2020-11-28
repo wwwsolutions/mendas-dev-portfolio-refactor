@@ -1,4 +1,5 @@
-.layout {
+/* ⌘ LAYOUT TEMPLATE ⌘ */
+[data-page="template"] .layout {
   display: grid;
   gap: 0;
   grid-template-columns: 1fr 20fr 1fr;
@@ -7,7 +8,7 @@
     ".        close       close"
     "header   header      header"
     ".        scroll      ."
-    ".        diagram     .     "
+    ".        content     .     "
     ".        footer      .     ";
 
   @mixin atSmall {
@@ -18,7 +19,7 @@
     grid-template-areas:
       ".      close        close"
       ".      header       ."
-      ".      diagram      ."
+      ".      content      ."
       ".      footer       .";
   }
 
@@ -30,7 +31,7 @@
       grid-template-areas:
         ".      close        close"
         ".      header       ."
-        ".      diagram      ."
+        ".      content      ."
         ".      footer       .";
     }
   }
@@ -42,7 +43,7 @@
       grid-template-rows: 15em auto 10vmax;
       grid-template-areas:
         ".      header        close"
-        ".      diagram      ."
+        ".      content      ."
         ".      footer       .";
     }
   }
@@ -54,7 +55,7 @@
       grid-template-rows: 15em auto 8vmax;
       grid-template-areas:
         ".      header        close"
-        ".      diagram      ."
+        ".      content      ."
         ".      footer       .";
     }
   }
@@ -66,7 +67,7 @@
       grid-template-rows: 15em auto 6vmax;
       grid-template-areas:
         ".      header            close"
-        ".      diagram      ."
+        ".      content      ."
         ".      footer       .";
     }
   }
@@ -105,6 +106,139 @@
 
   /* HEADER */
   &__header {
+    @mixin supportsGrid {
+      grid-area: header;
+    }
+
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    font-size: 1rem; /* baseline */
+    z-index: 30;
+    @mixin flexCenter;
+  
+    @mixin atSmall {
+      justify-content: center;
+      /* padding: clamp(4em, 4vmax + 1em, 10vmax) 0; */
+    }
+
+    @mixin atMedium {
+      justify-content: left;
+      /* padding-top: clamp(4em, 4vmax + 1em, 10vmax); */
+    }
+  }
+
+  /* CONTENT */
+  &__content {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 20;
+    @mixin supportsGrid {
+      grid-area: content;
+    }
+  }
+
+  /* FOOTER */  
+  &__footer {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 30;
+    @mixin supportsGrid {
+      grid-area: footer;
+    }
+  }    
+}
+
+/* ⌘ LAYOUT ⌘ */
+[data-page="index"] .layout {
+  display: grid;
+  gap: 0;
+  grid-template-columns: 1fr 20fr 1fr;
+  grid-template-rows: 80vh 20vh auto 200px;
+  grid-template-areas:
+    "header   header      header"
+    ".        scroll      ."
+    ".        content     .     "
+    ".        footer      .     ";
+
+  @mixin atSmall {
+    gap: 3em 0;
+    display: grid;
+    grid-template-columns: 1fr 20fr 1fr;
+    grid-template-rows: min-content auto 200px;
+    grid-template-areas:
+      ".      header       ."
+      ".      content      ."
+      ".      footer       .";
+  }
+
+  @mixin atMedium {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: min-content auto 10vmax;
+      grid-template-areas:
+        ".      header       ."
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atLarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: min-content auto 10vmax;
+      grid-template-areas:
+        ".      header       ."
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atXLarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: min-content auto 8vmax;
+      grid-template-areas:
+        ".      header       ."
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atULarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: min-content auto 6vmax;
+      grid-template-areas:
+        ".      header       ."
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  /* SCROLL INDICATOR BUTTON */
+  &__scroll-indicator {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 30;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    visibility: visible;
+    @mixin supportsGrid {
+      grid-area: scroll;
+    }
+
+    @mixin atSmall {
+      display: none;
+    }
+  }
+
+  /* HEADER */
+  &__header {
     /* mix-blend-mode: normal; */
     mix-blend-mode: overlay;
     font-size: 1rem; /* baseline */
@@ -115,45 +249,442 @@
       grid-area: header;
     }
 
-    &--initial {
-      @mixin flexCenter;
-    
-      @mixin atSmall {
-        justify-content: center;
-        /* padding: clamp(4em, 4vmax + 1em, 10vmax) 0; */
-      }
+    @mixin flexCenter;
   
-      @mixin atMedium {
-        justify-content: left;
-        /* padding-top: clamp(4em, 4vmax + 1em, 10vmax); */
-      }
+    @mixin atSmall {
+      justify-content: center;
+      /* padding: clamp(4em, 4vmax + 1em, 10vmax) 0; */
     }
-  
-    &--standard {
-      height: 20vh;
-      @mixin supportsGrid {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 3fr min-content 5fr min-content 3fr min-content 6fr;
-        grid-template-areas:
-          ".          "
-          "btn_close  "
-          ".          "
-          "headline   "
-          ".          "
-          "scroll_icon"
-          ".          ";
-      }
+
+    @mixin atMedium {
+      justify-content: left;
+      /* padding-top: clamp(4em, 4vmax + 1em, 10vmax); */
     }
   }
 
-  /* DIAGRAM */
-  &__diagram {
+  /* CONTENT */
+  &__content {
     /* mix-blend-mode: normal; */
     mix-blend-mode: overlay;
     z-index: 20;
     @mixin supportsGrid {
-      grid-area: diagram;
+      grid-area: content;
+    }
+  }
+
+  /* FOOTER */  
+  &__footer {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 30;
+    @mixin supportsGrid {
+      grid-area: footer;
+    }
+  }    
+}
+
+[data-page="about"] .layout {
+  display: grid;
+  gap: 0;
+  grid-template-columns: 1fr 20fr 1fr;
+  grid-template-rows: 10vh auto 200px;
+  grid-template-areas:
+    ".        close       close"
+    ".        content     .     "
+    ".        footer      .     ";
+
+  @mixin atSmall {
+    gap: 3em 0;
+    display: grid;
+    grid-template-columns: 1fr 20fr 1fr;
+    grid-template-rows: 10em auto 200px;
+    grid-template-areas:
+      ".      close        close"
+      ".      content      ."
+      ".      footer       .";
+  }
+
+  @mixin atMedium {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 10vmax;
+      grid-template-areas:
+        ".      close        close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atLarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 10vmax;
+      grid-template-areas:
+        ".      .            close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atXLarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 8vmax;
+      grid-template-areas:
+        ".      .            close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atULarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 6vmax;
+      grid-template-areas:
+        ".      .            close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  /* CLOSE BUTTON */
+  &__close {
+    mix-blend-mode: normal;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    @mixin supportsGrid {
+      grid-area: close;
+    }
+  }
+
+  /* CONTENT */
+  &__content {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 20;
+    @mixin supportsGrid {
+      grid-area: content;
+    }
+  }
+
+  /* FOOTER */  
+  &__footer {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 30;
+    @mixin supportsGrid {
+      grid-area: footer;
+    }
+  }    
+}
+
+[data-page="contact"] .layout {
+  display: grid;
+  gap: 0;
+  grid-template-columns: 1fr 20fr 1fr;
+  grid-template-rows: 10vh auto 200px;
+  grid-template-areas:
+    ".        close       close"
+    ".        content     .     "
+    ".        footer      .     ";
+
+  @mixin atSmall {
+    gap: 3em 0;
+    display: grid;
+    grid-template-columns: 1fr 20fr 1fr;
+    grid-template-rows: 10em auto 200px;
+    grid-template-areas:
+      ".      close        close"
+      ".      content      ."
+      ".      footer       .";
+  }
+
+  @mixin atMedium {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 10vmax;
+      grid-template-areas:
+        ".      close        close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atLarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 10vmax;
+      grid-template-areas:
+        ".      .            close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atXLarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 8vmax;
+      grid-template-areas:
+        ".      .            close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atULarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 6vmax;
+      grid-template-areas:
+        ".      .            close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  /* CLOSE BUTTON */
+  &__close {
+    mix-blend-mode: normal;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    @mixin supportsGrid {
+      grid-area: close;
+    }
+  }
+
+  /* CONTENT */
+  &__content {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 20;
+    @mixin supportsGrid {
+      grid-area: content;
+    }
+  }
+
+  /* FOOTER */  
+  &__footer {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 30;
+    @mixin supportsGrid {
+      grid-area: footer;
+    }
+  }    
+}
+
+[data-page="stack"] .layout {
+  display: grid;
+  gap: 0;
+  grid-template-columns: 1fr 20fr 1fr;
+  grid-template-rows: 10vh auto 200px;
+  grid-template-areas:
+    ".        close       close"
+    ".        content     .     "
+    ".        footer      .     ";
+
+  @mixin atSmall {
+    gap: 3em 0;
+    display: grid;
+    grid-template-columns: 1fr 20fr 1fr;
+    grid-template-rows: 10em auto 200px;
+    grid-template-areas:
+      ".      close        close"
+      ".      content      ."
+      ".      footer       .";
+  }
+
+  @mixin atMedium {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 10vmax;
+      grid-template-areas:
+        ".      close        close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atLarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 10vmax;
+      grid-template-areas:
+        ".      .            close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atXLarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 8vmax;
+      grid-template-areas:
+        ".      .            close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atULarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 6vmax;
+      grid-template-areas:
+        ".      .            close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  /* CLOSE BUTTON */
+  &__close {
+    mix-blend-mode: normal;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    @mixin supportsGrid {
+      grid-area: close;
+    }
+  }
+
+  /* CONTENT */
+  &__content {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 20;
+    @mixin supportsGrid {
+      grid-area: content;
+    }
+  }
+
+  /* FOOTER */  
+  &__footer {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 30;
+    @mixin supportsGrid {
+      grid-area: footer;
+    }
+  }    
+}
+
+[data-page="portfolio"] .layout {
+  display: grid;
+  gap: 0;
+  grid-template-columns: 1fr 20fr 1fr;
+  grid-template-rows: 10vh auto 200px;
+  grid-template-areas:
+    ".        close       close"
+    ".        content     .     "
+    ".        footer      .     ";
+
+  @mixin atSmall {
+    gap: 3em 0;
+    display: grid;
+    grid-template-columns: 1fr 20fr 1fr;
+    grid-template-rows: 10em auto 200px;
+    grid-template-areas:
+      ".      close        close"
+      ".      content      ."
+      ".      footer       .";
+  }
+
+  @mixin atMedium {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 10vmax;
+      grid-template-areas:
+        ".      close        close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atLarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 10vmax;
+      grid-template-areas:
+        ".      .            close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atXLarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 8vmax;
+      grid-template-areas:
+        ".      .            close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atULarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 10em auto 6vmax;
+      grid-template-areas:
+        ".      .            close"
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  /* CLOSE BUTTON */
+  &__close {
+    mix-blend-mode: normal;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    @mixin supportsGrid {
+      grid-area: close;
+    }
+  }
+
+  /* CONTENT */
+  &__content {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 20;
+    @mixin supportsGrid {
+      grid-area: content;
     }
   }
 
