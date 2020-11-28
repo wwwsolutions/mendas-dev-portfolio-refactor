@@ -14,6 +14,18 @@ $gradient-radial: radial-gradient(
   $orangeYellowLighter
 );
 
+$gradient-right-gold: linear-gradient(
+  to right,
+  $orangeYellowDark,
+  $sandyBrownDark
+);
+
+$gradient-angled-transparent: linear-gradient(
+  12.5deg,
+  hsl(45, 22%, 88%) 50%,
+  hsl(45, 15%, 86%) 0
+);
+
 /* 
 
   BACKGROUNDS
@@ -25,14 +37,15 @@ $gradient-radial: radial-gradient(
   background-repeat: no-repeat;
 
   /* gradients */
-  &--gradient-light {
-    background-image: $gradient-top-left-mixed, url($bgImageUrl1920x2408);
-    background-blend-mode: color;
+  &--gradient-goldish {
+    border-top: 1px solid $orangeYellowDark;
+    background-image: $gradient-right-gold;
   }
 
-  &--gradient-radial-light {
-    background-image: $gradient-radial, url($bgImageUrl1920x2408);
-    background-blend-mode: color;
+  &--gradient-whitish {
+    border-top: 1px solid $whiteLighter;
+    background-image: $gradient-angled-transparent;
+    border-bottom: 1px solid $whiteDarker;
   }
 
   &--test {

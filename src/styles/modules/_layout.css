@@ -493,70 +493,76 @@
 
 [data-page="stack"] .layout {
   display: grid;
-  gap: 0;
+  gap: 2em 0;
   grid-template-columns: 1fr 20fr 1fr;
-  grid-template-rows: 10vh auto 200px;
+  grid-template-rows: 10vh min-content auto 200px;
   grid-template-areas:
-    ".        close       close"
-    ".        content     .     "
-    ".        footer      .     ";
+    ".        close           close"
+    ".        description     .    "
+    ".        content         .    "
+    ".        footer          .    ";
 
   @mixin atSmall {
     gap: 3em 0;
     display: grid;
     grid-template-columns: 1fr 20fr 1fr;
-    grid-template-rows: 10em auto 200px;
+    grid-template-rows: 10em min-content auto 200px;
     grid-template-areas:
-      ".      close        close"
-      ".      content      ."
-      ".      footer       .";
+      ".        close           close"
+      ".        description     .    "
+      ".        content         .    "
+      ".        footer          .    ";
   }
 
   @mixin atMedium {
     @mixin supportsGrid {
       display: grid;
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: 10em auto 10vmax;
+      grid-template-rows: 10em min-content auto 10vmax;
       grid-template-areas:
-        ".      close        close"
-        ".      content      ."
-        ".      footer       .";
+        ".        close           close"
+        ".        description     .    "
+        ".        content         .    "
+        ".        footer          .    ";
     }
   }
 
   @mixin atLarge {
     @mixin supportsGrid {
       display: grid;
-      grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: 10em auto 10vmax;
+      grid-template-columns: 1fr 6fr 1fr;
+      grid-template-rows: 10em min-content auto 10vmax;
       grid-template-areas:
-        ".      .            close"
-        ".      content      ."
-        ".      footer       .";
+        ".        .               close"
+        ".        description     .    "
+        ".        content         .    "
+        ".        footer          .    ";
     }
   }
 
   @mixin atXLarge {
     @mixin supportsGrid {
       display: grid;
-      grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: 10em auto 8vmax;
+      grid-template-columns: 1fr 4fr 1fr;
+      grid-template-rows: 10em min-content auto 8vmax;
       grid-template-areas:
-        ".      .            close"
-        ".      content      ."
-        ".      footer       .";
+        ".        .               close"
+        ".        description     .    "
+        ".        content         .    "
+        ".        footer          .    ";
     }
   }
 
   @mixin atULarge {
     @mixin supportsGrid {
       display: grid;
-      grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: 10em auto 6vmax;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: 10em min-content auto 6vmax;
       grid-template-areas:
-        ".      .            close"
-        ".      content      ."
-        ".      footer       .";
+        ".        .               close"
+        ".        description     .    "
+        ".        content         .    "
+        ".        footer          .    ";
     }
   }
 
@@ -574,10 +580,20 @@
     }
   }
 
+  /* DESCRIPTION TEXT */
+  &__description {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: multiply;
+    z-index: 20;
+    @mixin supportsGrid {
+      grid-area: description;
+    }
+  }
+
   /* CONTENT */
   &__content {
-    /* mix-blend-mode: normal; */
-    mix-blend-mode: overlay;
+    mix-blend-mode: normal;
+    /* mix-blend-mode: overlay; */
     z-index: 20;
     @mixin supportsGrid {
       grid-area: content;

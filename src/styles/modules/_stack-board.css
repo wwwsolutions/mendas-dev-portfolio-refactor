@@ -1,0 +1,94 @@
+.stack-board {
+  @mixin supportsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 8em 0;
+    grid-template-areas:
+      "languages"
+      "frontend"
+      "backend"
+      "tooling";
+  }
+
+  font-size: 1rem; /* baseline */
+
+  &__languages {
+    @mixin supportsGrid {
+      grid-area: languages;
+    }
+  }
+
+  &__frontend {
+    @mixin supportsGrid {
+      grid-area: frontend;
+    }
+  }
+
+  &__backend {
+    @mixin supportsGrid {
+      grid-area: backend;
+    }
+  }
+
+  &__tooling {
+    @mixin supportsGrid {
+      grid-area: tooling;
+    }
+  }
+
+  &__title {
+    font-size: clamp(1.2em, 1.2vw + 1em, 1.4em);
+    font-family: "dosis", sans-serif;
+    font-weight: 500;
+    padding: 0.5em 0.75em;
+    color: white;
+  }
+
+  &__list {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(6em, 100%), 6em));
+      gap: 2em 1em;
+      justify-content: space-around;
+    }
+
+    padding: 2em;
+    list-style: none;
+  }
+
+  &__item {
+    height: 4em;
+    width: 4em;
+    justify-self: center;
+    align-self: center;
+  }
+
+  &__lnk {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__ico {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    /* filter: invert(1) sepia(1) saturate(0) hue-rotate(0deg) brightness(0.75); */
+
+    /*     @mixin atSmall {
+      width: 65%;
+      height: 65%;
+    }
+
+    @mixin atMedium {
+      width: 80%;
+      height: 80%;
+    }
+ */
+  }
+}
