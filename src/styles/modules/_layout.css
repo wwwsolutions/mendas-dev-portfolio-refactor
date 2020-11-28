@@ -1,4 +1,4 @@
-[data-page="index"] .layout {
+[data-page="template"] .layout {
   display: grid;
   gap: 0;
   grid-template-columns: 1fr 20fr 1fr;
@@ -105,6 +105,138 @@
 
   /* HEADER */
   &__header {
+    @mixin supportsGrid {
+      grid-area: header;
+    }
+
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    font-size: 1rem; /* baseline */
+    z-index: 30;
+    @mixin flexCenter;
+  
+    @mixin atSmall {
+      justify-content: center;
+      /* padding: clamp(4em, 4vmax + 1em, 10vmax) 0; */
+    }
+
+    @mixin atMedium {
+      justify-content: left;
+      /* padding-top: clamp(4em, 4vmax + 1em, 10vmax); */
+    }
+  }
+
+  /* CONTENT */
+  &__content {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 20;
+    @mixin supportsGrid {
+      grid-area: content;
+    }
+  }
+
+  /* FOOTER */  
+  &__footer {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 30;
+    @mixin supportsGrid {
+      grid-area: footer;
+    }
+  }    
+}
+
+[data-page="index"] .layout {
+  display: grid;
+  gap: 0;
+  grid-template-columns: 1fr 20fr 1fr;
+  grid-template-rows: 80vh 20vh auto 200px;
+  grid-template-areas:
+    "header   header      header"
+    ".        scroll      ."
+    ".        content     .     "
+    ".        footer      .     ";
+
+  @mixin atSmall {
+    gap: 3em 0;
+    display: grid;
+    grid-template-columns: 1fr 20fr 1fr;
+    grid-template-rows: min-content auto 200px;
+    grid-template-areas:
+      ".      header       ."
+      ".      content      ."
+      ".      footer       .";
+  }
+
+  @mixin atMedium {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: min-content auto 10vmax;
+      grid-template-areas:
+        ".      header       ."
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atLarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: min-content auto 10vmax;
+      grid-template-areas:
+        ".      header       ."
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atXLarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: min-content auto 8vmax;
+      grid-template-areas:
+        ".      header       ."
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  @mixin atULarge {
+    @mixin supportsGrid {
+      display: grid;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: min-content auto 6vmax;
+      grid-template-areas:
+        ".      header       ."
+        ".      content      ."
+        ".      footer       .";
+    }
+  }
+
+  /* SCROLL INDICATOR BUTTON */
+  &__scroll-indicator {
+    /* mix-blend-mode: normal; */
+    mix-blend-mode: overlay;
+    z-index: 30;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    visibility: visible;
+    @mixin supportsGrid {
+      grid-area: scroll;
+    }
+
+    @mixin atSmall {
+      display: none;
+    }
+  }
+
+  /* HEADER */
+  &__header {
     /* mix-blend-mode: normal; */
     mix-blend-mode: overlay;
     font-size: 1rem; /* baseline */
@@ -115,30 +247,16 @@
       grid-area: header;
     }
 
-    &--initial {
-      @mixin flexCenter;
-    
-      @mixin atSmall {
-        justify-content: center;
-        /* padding: clamp(4em, 4vmax + 1em, 10vmax) 0; */
-      }
+    @mixin flexCenter;
   
-      @mixin atMedium {
-        justify-content: left;
-        /* padding-top: clamp(4em, 4vmax + 1em, 10vmax); */
-      }
+    @mixin atSmall {
+      justify-content: center;
+      /* padding: clamp(4em, 4vmax + 1em, 10vmax) 0; */
     }
-  
-    &--standard {
-      display: none;
 
-      @mixin atSmall {
-        justify-content: center;
-      }
-  
-      @mixin atMedium {
-        justify-content: left;
-      }
+    @mixin atMedium {
+      justify-content: left;
+      /* padding-top: clamp(4em, 4vmax + 1em, 10vmax); */
     }
   }
 
