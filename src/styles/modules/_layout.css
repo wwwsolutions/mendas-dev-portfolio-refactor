@@ -1,4 +1,4 @@
-.layout {
+[data-page="index"] .layout {
   display: grid;
   gap: 0;
   grid-template-columns: 1fr 20fr 1fr;
@@ -7,7 +7,7 @@
     ".        close       close"
     "header   header      header"
     ".        scroll      ."
-    ".        diagram     .     "
+    ".        content     .     "
     ".        footer      .     ";
 
   @mixin atSmall {
@@ -18,7 +18,7 @@
     grid-template-areas:
       ".      close        close"
       ".      header       ."
-      ".      diagram      ."
+      ".      content      ."
       ".      footer       .";
   }
 
@@ -30,7 +30,7 @@
       grid-template-areas:
         ".      close        close"
         ".      header       ."
-        ".      diagram      ."
+        ".      content      ."
         ".      footer       .";
     }
   }
@@ -42,7 +42,7 @@
       grid-template-rows: 15em auto 10vmax;
       grid-template-areas:
         ".      header        close"
-        ".      diagram      ."
+        ".      content      ."
         ".      footer       .";
     }
   }
@@ -54,7 +54,7 @@
       grid-template-rows: 15em auto 8vmax;
       grid-template-areas:
         ".      header        close"
-        ".      diagram      ."
+        ".      content      ."
         ".      footer       .";
     }
   }
@@ -66,7 +66,7 @@
       grid-template-rows: 15em auto 6vmax;
       grid-template-areas:
         ".      header            close"
-        ".      diagram      ."
+        ".      content      ."
         ".      footer       .";
     }
   }
@@ -130,30 +130,25 @@
     }
   
     &--standard {
-      height: 20vh;
-      @mixin supportsGrid {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 3fr min-content 5fr min-content 3fr min-content 6fr;
-        grid-template-areas:
-          ".          "
-          "btn_close  "
-          ".          "
-          "headline   "
-          ".          "
-          "scroll_icon"
-          ".          ";
+      display: none;
+
+      @mixin atSmall {
+        justify-content: center;
+      }
+  
+      @mixin atMedium {
+        justify-content: left;
       }
     }
   }
 
-  /* DIAGRAM */
-  &__diagram {
+  /* CONTENT */
+  &__content {
     /* mix-blend-mode: normal; */
     mix-blend-mode: overlay;
     z-index: 20;
     @mixin supportsGrid {
-      grid-area: diagram;
+      grid-area: content;
     }
   }
 
