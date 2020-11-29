@@ -26,7 +26,7 @@
   @mixin atMedium {
     @mixin supportsGrid {
       display: grid;
-      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-columns: 1fr 20fr 1fr;
       grid-template-rows: 10em min-content auto 10vmax;
       grid-template-areas:
         ".      close        close"
@@ -39,7 +39,7 @@
   @mixin atLarge {
     @mixin supportsGrid {
       display: grid;
-      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-columns: 1fr 20fr 1fr;
       grid-template-rows: 15em auto 10vmax;
       grid-template-areas:
         ".      header        close"
@@ -51,7 +51,7 @@
   @mixin atXLarge {
     @mixin supportsGrid {
       display: grid;
-      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-columns: 1fr 20fr 1fr;
       grid-template-rows: 15em auto 8vmax;
       grid-template-areas:
         ".      header        close"
@@ -63,10 +63,10 @@
   @mixin atULarge {
     @mixin supportsGrid {
       display: grid;
-      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-columns: 1fr 20fr 1fr;
       grid-template-rows: 15em auto 6vmax;
       grid-template-areas:
-        ".      header            close"
+        ".      header       close"
         ".      content      ."
         ".      footer       .";
     }
@@ -290,7 +290,7 @@
   grid-template-rows: 10vh auto 200px;
   grid-template-areas:
     ".        close       close"
-    ".        content     .     "
+    "content        content     content"
     ".        footer      .     ";
 
   @mixin atSmall {
@@ -319,7 +319,7 @@
   @mixin atLarge {
     @mixin supportsGrid {
       display: grid;
-      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-columns: 1fr 5fr 1fr;
       grid-template-rows: 10em auto 10vmax;
       grid-template-areas:
         ".      .            close"
@@ -331,7 +331,7 @@
   @mixin atXLarge {
     @mixin supportsGrid {
       display: grid;
-      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
       grid-template-rows: 10em auto 8vmax;
       grid-template-areas:
         ".      .            close"
@@ -343,7 +343,7 @@
   @mixin atULarge {
     @mixin supportsGrid {
       display: grid;
-      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 10em auto 6vmax;
       grid-template-areas:
         ".      .            close"
@@ -392,7 +392,7 @@
   display: grid;
   gap: 2em 0;
   grid-template-columns: 1fr 20fr 1fr;
-  grid-template-rows: 10vh min-content auto 200px;
+  grid-template-rows: 0vh min-content auto 200px;
   grid-template-areas:
     ".        close           close"
     ".        description     .    "
@@ -427,7 +427,7 @@
   @mixin atLarge {
     @mixin supportsGrid {
       display: grid;
-      grid-template-columns: 1fr 6fr 1fr;
+      grid-template-columns: 1fr 5fr 1fr;
       grid-template-rows: 10em min-content auto 10vmax;
       grid-template-areas:
         ".        .               close"
@@ -440,7 +440,7 @@
   @mixin atXLarge {
     @mixin supportsGrid {
       display: grid;
-      grid-template-columns: 1fr 4fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
       grid-template-rows: 10em min-content auto 8vmax;
       grid-template-areas:
         ".        .               close"
@@ -453,7 +453,7 @@
   @mixin atULarge {
     @mixin supportsGrid {
       display: grid;
-      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 10em min-content auto 6vmax;
       grid-template-areas:
         ".        .               close"
@@ -547,7 +547,7 @@
   @mixin atLarge {
     @mixin supportsGrid {
       display: grid;
-      grid-template-columns: 1fr 6fr 1fr;
+      grid-template-columns: 1fr 5fr 1fr;
       grid-template-rows: 10em min-content auto 10vmax;
       grid-template-areas:
         ".        .               close"
@@ -560,7 +560,7 @@
   @mixin atXLarge {
     @mixin supportsGrid {
       display: grid;
-      grid-template-columns: 1fr 4fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
       grid-template-rows: 10em min-content auto 8vmax;
       grid-template-areas:
         ".        .               close"
@@ -714,7 +714,8 @@
   /* CONTENT */
   &__content {
     /* mix-blend-mode: normal; */
-    mix-blend-mode: overlay;
+    /* mix-blend-mode: overlay; */
+    mix-blend-mode: normal;
     z-index: 20;
     @mixin supportsGrid {
       grid-area: content;

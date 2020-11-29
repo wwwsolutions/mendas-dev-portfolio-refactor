@@ -79,4 +79,23 @@ $gradient-angled-transparent: linear-gradient(
     background-image: url($bgImageUrl1920x2408), url($bgImageUrl1920x2408), $gradient-a, $gradient-b, $gradient-c;
     background-blend-mode: lighten, screen, hard-light, exclusion;
   }
+
+  &--card1 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../../assets/images/card1.jpg");
+  }
+  &--card2 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../../assets/images/card2.jpg");
+  }
+  &--card3 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../../assets/images/card3.jpg");
+  }
 }
