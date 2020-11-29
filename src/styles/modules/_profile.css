@@ -1,5 +1,5 @@
 .profile {
-  font-size: 1rem; /* control the size of the card */
+  font-size: 2rem; /* control the size of the card */
   width: 100%;
   font-family: "dosis", sans-serif;
   background-color: $orangeYellowDark;
@@ -17,17 +17,17 @@
   }
 
   @mixin atSmall {
-    font-size: 0.65rem;
+    font-size: 0.65em;
     width: 38.75em;
     border-radius: 0 50% 0 50%;
   }
 
   @mixin atMedium {
-    font-size: 0.7rem;
+    font-size: 0.7em;
   }
 
   @mixin atLarge {
-    font-size: 0.9rem;
+    font-size: 0.9em;
   }
 
   &__title {

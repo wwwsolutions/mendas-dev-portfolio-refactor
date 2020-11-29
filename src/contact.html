@@ -109,8 +109,52 @@
     </a>  
   </div>
 
+  <section class="layout__description description">
+    <h2 class="description__title">
+      Send me <strong>a message!</strong>
+    </h2>
+    <p class="description__txt description__txt--no-b-padding">
+      Here is listed <strong>my stack</strong> of programming languages,
+      pre-processors, frameworks, libraries, databases and tools I'm
+      <strong>using</strong> in my work. This is by no means an exhaustive
+      list but it gives an indication of my state of mind.
+    </p>
+  </section>
+
   <main class="layout__content">
-    Content    
+    <form action="" class="contact-form" required>
+      <div class="contact-form-elements">
+        <input
+          class="contact-form-elements__element contact-form-elements__element--name contact-form-elements__element--medium"
+          type="text"
+          inputmode="text"
+          name="name"
+          placeholder="Full Name"
+        />
+        <input
+          class="contact-form-elements__element contact-form-elements__element--email contact-form-elements__element--medium"
+          type="email"
+          inputmode="email"
+          name="email"
+          placeholder="Email Address"
+        />
+        <input
+          class="contact-form-elements__element contact-form-elements__element--subject contact-form-elements__element--medium"
+          type="text"
+          inputmode="text"
+          name="subject"
+          placeholder="Subject"
+        />
+        <textarea
+          class="contact-form-elements__element contact-form-elements__element--message contact-form-elements__element--medium"
+          placeholder="What do you need?"
+          inputmode="text"
+          name="message"
+          rows="6"
+        ></textarea>
+        <button class="contact-form-elements__btn">Submit</button>
+      </div>
+    </form>    
   </main>
 
   <footer class="layout__footer footer">

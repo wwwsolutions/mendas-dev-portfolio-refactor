@@ -15,5 +15,9 @@
     font-size: clamp(1.25em, 1.25vw + 1em, 1.5em);
     line-height: clamp(1.2em, 1.2vw + 1em, 1.4em);
     padding-bottom: 2.5em;
+
+    &--no-b-padding {
+      padding-bottom: 0;
+    }
   }
 }
