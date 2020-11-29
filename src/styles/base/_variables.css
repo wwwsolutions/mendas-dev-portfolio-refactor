@@ -6,3 +6,6 @@
 
 $bgImageUrl1920x2408: "../../assets/images/devn-vXpbB4-4OOM-unsplash-medium-optimized-bw-1920x2408.jpg";
 $bgImageUrl960x1204: "../../assets/images/man-against-glass-960x1204-optimized.jpg";
+
+/* text shadows */
+$textShadowSmall: 0 0 0.375em rgba(0, 0, 0, 0.1);

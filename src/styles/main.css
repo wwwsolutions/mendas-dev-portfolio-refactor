@@ -68,3 +68,6 @@ usage:
 @import "modules/_profile";
 @import "modules/_contact-form";
 
+@import "modules/_tabs";
+@import "modules/_project-board";
+@import "modules/_card-flip";

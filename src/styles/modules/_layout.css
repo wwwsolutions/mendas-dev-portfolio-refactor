@@ -688,7 +688,7 @@
   @mixin atULarge {
     @mixin supportsGrid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 10fr 1fr;
       grid-template-rows: 10em auto 6vmax;
       grid-template-areas:
         ".      .            close"
@@ -714,7 +714,8 @@
   /* CONTENT */
   &__content {
     /* mix-blend-mode: normal; */
-    mix-blend-mode: overlay;
+    /* mix-blend-mode: overlay; */
+    mix-blend-mode: normal;
     z-index: 20;
     @mixin supportsGrid {
       grid-area: content;

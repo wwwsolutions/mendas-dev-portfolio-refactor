@@ -1,0 +1,303 @@
+/* source: 
+  card: https://codepen.io/kparzecki/pen/RYzZwG 
+  tags: https://www.mixd.co.uk/work/
+*/
+
+.flip-card {
+  font-size: 1rem; /* baseline */
+
+  width: 26.25em; /* 420px */
+  height: 33.75em; /* 540px */
+  perspective: 93.75em;
+
+  &__content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.75, 0, 0.85, 1);
+  }
+
+  &__front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    border-radius: 0.375em;
+    background-color: white;
+  }
+
+  &__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    border-radius: 0.375em;
+
+    &--flip {
+      transform: rotateY(180deg);
+      background-color: white;
+      border: 0.125em solid white;
+    }
+  }
+
+  &__inner {
+    @mixin supportsGrid {
+      display: grid;
+    }
+
+    height: 100%;
+    padding: 1.5em;
+    transform: translateZ(0.0625em) scale(0.94);
+
+    &--front {
+      @mixin supportsGrid {
+        justify-items: center;
+        grid-template-rows: 4fr 1fr 1fr 3fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          ".            "
+          "card_title   "
+          "card_subtitle"
+          ".            "
+          "card_flip     ";
+      }
+    }
+
+    &--back {
+      @mixin supportsGrid {
+        grid-template-rows: 1fr 2fr 1fr 14fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, auto);
+        grid-column-gap: 0.8em;
+        justify-items: center;
+        grid-template-areas:
+          "card_tags            card_tags         card_tags         card_price         "
+          "card_tech            card_tech         card_tech         card_tech"
+          ".            .         .         .         "
+          "card_desc            card_desc         card_desc         card_desc"
+          ".            .         .         .         "
+          "card_cta            card_cta         card_cta         card_cta"
+          ".            .         .         .         "
+          "card_btn_return         card_btn_return         card_btn_return          card_btn_return";
+      }
+    }
+  }
+
+  &__title {
+    @mixin supportsGrid {
+      grid-area: card_title;
+    }
+
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.0225875em;
+    color: $orangeYellowDark;
+    font-weight: 600;
+    text-shadow: $textShadowSmall;
+  }
+
+  &__subtitle {
+    @mixin supportsGrid {
+      grid-area: card_subtitle;
+      justify-self: center;
+    }
+
+    color: $sandyBrownDark;
+    font-size: 1em;
+    font-weight: 100;
+    text-shadow: $textShadowSmall;
+  }
+
+  &__button-flip {
+    @mixin supportsGrid {
+      grid-area: card_flip;
+      justify-self: center;
+    }
+
+    display: block;
+    min-width: 3em;
+    height: 3em;
+    padding: 0 1.5em;
+    border: solid 0.125em $orangeYellowDark;
+    border-radius: 0.25em;
+    background-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.0625em;
+    line-height: 2.9em;
+    color: $orangeYellowDark;
+    font-weight: 600;
+    backface-visibility: hidden;
+    cursor: pointer;
+    text-align: center;
+    text-shadow: $textShadowSmall 0 0 0.375em rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $orangeYellowDark;
+      box-shadow: 0 0 3.125em rgba(0, 0, 0, 0.5);
+      text-shadow: $textShadowSmall none;
+      color: $blackDarker;
+    }
+  }
+
+  &__button-return {
+    @mixin supportsGrid {
+      grid-area: card_btn_return;
+      justify-self: center;
+      align-items: center;
+    }
+
+    display: flex;
+    cursor: pointer;
+    height: 3em;
+    padding: 0 1.5em;
+    min-width: 3em;
+    border: solid 0.125em $blackLighter;
+    border-radius: 0.25em;
+    background-color: transparent;
+    backface-visibility: hidden;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $blackLighter;
+      box-shadow: none;
+    }
+
+    &:hover .flip-card__button-return-ico {
+      filter: invert(1);
+    }
+  }
+
+  &__button-return-ico {
+    display: block;
+    height: 1.5em;
+    width: 1.5em;
+  }
+
+  &__description {
+    @mixin supportsGrid {
+      grid-area: card_desc;
+    }
+
+    font-size: 0.86em;
+    border-radius: 0.3125em;
+    font-weight: 600;
+    line-height: 1.4em;
+    overflow: auto;
+    color: $blackLighter;
+    padding-right: 0.625em;
+  }
+
+  &__description-text {
+    padding-bottom: 1em;
+  }
+  &__more {
+    display: none;
+
+    &:checked ~ .flip-card__content {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__tags {
+    @mixin supportsGrid {
+      grid-area: card_tags;
+      justify-self: start;
+    }
+
+    font-weight: 600;
+    font-size: 0.86em;
+    color: $blackLighter;
+    padding-bottom: 0.5em;
+  }
+
+  &__tech {
+    @mixin supportsGrid {
+      grid-area: card_tech;
+      justify-self: start;
+    }
+
+    display: flex;
+  }
+
+  &__tech-item {
+    height: 100%;
+  }
+
+  &__tech-lnk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5em;
+  }
+
+  &__tech-img {
+    display: block;
+    height: 2.6em;
+    width: 2.6em;
+  }
+
+  &__tech-label {
+    display: block;
+    font-size: 0.8em;
+    padding-top: 0.5em;
+    color: $blackLighter;
+  }
+
+  &__cta {
+    @mixin supportsGrid {
+      grid-area: card_cta;
+    }
+
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__cta-btn {
+    display: flex;
+    align-items: center;
+    padding: 0.25em 0.35em;
+    border-radius: 0.375em;
+    border: solid 0.05125em $blackDarker;
+    transition: 0.3s ease-in-out;
+    filter: contrast(0%);
+
+    &:hover {
+      background-color: $whiteLight;
+      filter: contrast(75%);
+    }
+  }
+
+  &__cta-img {
+    display: block;
+    height: 1.8em;
+    width: 1.8em;
+  }
+
+  &__cta-label {
+    display: block;
+    font-size: 0.8em;
+    padding: 0 0.35em;
+    color: $blackLighter;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.3125em;
+}
+::-webkit-scrollbar-track {
+  background: $whiteLight;
+}
+::-webkit-scrollbar-thumb {
+  background: lighten($blackLighter, 20%);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $blackLighter;
+}

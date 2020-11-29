@@ -1,0 +1,14 @@
+.project-board {
+  @mixin supportsGrid {
+    display: grid;
+    grid-template-columns: repeat( 
+      auto-fill,
+      minmax(min(26.25em, 100%), 26.25em)
+    );
+    justify-content: space-around;
+    /* row-gap: 2.5em 1em; */
+  }
+
+  /* width: 100%; */
+  /* padding: 2.5em 0; */
+}
