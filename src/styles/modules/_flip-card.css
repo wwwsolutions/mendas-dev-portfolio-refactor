@@ -4,8 +4,11 @@
 */
 
 .flip-card {
+  background-color: transparent;
   font-size: 1rem; /* baseline */
 
+  padding: 0;
+  margin: 0;
   width: 26.25em; /* 420px */
   height: 33.75em; /* 540px */
   perspective: 93.75em;

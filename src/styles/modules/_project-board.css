@@ -3,12 +3,23 @@
     display: grid;
     grid-template-columns: repeat( 
       auto-fill,
-      minmax(min(26.25em, 100%), 26.25em)
+      /* minmax(min(26.25em, 100%), 26.25em) */
+      minmax(min(20em, 100%), 26.25em)
     );
-    justify-content: space-around;
-    /* row-gap: 2.5em 1em; */
+    /* justify-content: space-between; */
+    /* gap: 2.5em 1em; */
+    gap: 30px;
   }
 
   /* width: 100%; */
-  /* padding: 2.5em 0; */
+  background-color: red;
+  /* padding: 3em 0; */
+  margin-top: 30px;
+
+  &--center {
+    justify-content: center;
+    @mixin atLarge {
+      justify-content: start;
+    }
+  }
 }
