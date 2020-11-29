@@ -2,61 +2,44 @@
   @mixin supportsGrid {
     grid-area: contact_form;
   }
-}
 
-.contact-elements {
-  @mixin supportsGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, min-content);
-    grid-gap: 2em;
-    grid-template-areas:
-      "name_fld"
-      "email_fld"
-      "subject_fld"
-      "message_fld"
-      "submit_btn";
-  }
-
-  font-size: 0.85rem; /* baseline */
-  padding: 4em 2em;
-  background-color: $orangeYellowDark;
-
-  @mixin atSmall {
-    font-size: 0.9rem;
-  }
-
-  @mixin atMedium {
+  &__elements {
     @mixin supportsGrid {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(4, min-content);
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, min-content);
+      grid-gap: 2em;
       grid-template-areas:
-        "name_fld           email_fld"
-        "subject_fld        subject_fld"
-        "message_fld        message_fld"
-        ".                  submit_btn";
+        "name_fld"
+        "email_fld"
+        "subject_fld"
+        "message_fld"
+        "submit_btn";
     }
-
-    font-size: 1.1rem;
-    padding: 3em 2em;
-    border-radius: 1em;
-  }
-
-  &__btn {
-    @mixin supportsGrid {
-      grid-area: submit_btn;
+  
+    font-size: 0.85rem; /* baseline */
+    padding: 4em 2em;
+    background-color: $orangeYellowDark;
+  
+    @mixin atSmall {
+      font-size: 0.9rem;
     }
-
-    border: 0 none;
-    border-radius: 0.5em;
-    width: fit-content;
-    margin-left: auto;
-    font-size: 1.25em;
-    padding: 1em 2em;
-    background-color: $intOrangeAeroBase;
-    color: $whiteLighter;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.342);
-    cursor: pointer;
+  
+    @mixin atMedium {
+      @mixin supportsGrid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, min-content);
+        grid-template-areas:
+          "name_fld           email_fld"
+          "subject_fld        subject_fld"
+          "message_fld        message_fld"
+          ".                  submit_btn";
+      }
+  
+      font-size: 1.1rem;
+      padding: 3em 2em;
+      border-radius: 1em;
+    }
   }
 
   &__element {
@@ -99,5 +82,22 @@
     &--medium {
       padding: 1em;
     }
+  }
+
+  &__btn {
+    @mixin supportsGrid {
+      grid-area: submit_btn;
+    }
+
+    border: 0 none;
+    border-radius: 0.5em;
+    width: fit-content;
+    margin-left: auto;
+    font-size: 1.25em;
+    padding: 1em 2em;
+    background-color: $intOrangeAeroBase;
+    color: $whiteLighter;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.342);
+    cursor: pointer;
   }
 }
