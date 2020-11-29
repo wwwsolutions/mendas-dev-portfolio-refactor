@@ -1,10 +1,10 @@
-.contact-form {
+.contact {
   @mixin supportsGrid {
     grid-area: contact_form;
   }
 }
 
-.contact-form-elements {
+.contact-elements {
   @mixin supportsGrid {
     display: grid;
     grid-template-columns: 1fr;
