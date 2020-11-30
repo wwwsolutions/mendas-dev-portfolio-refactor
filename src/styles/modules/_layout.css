@@ -275,7 +275,8 @@
   /* FOOTER */  
   &__footer {
     /* mix-blend-mode: normal; */
-    mix-blend-mode: overlay;
+    /* mix-blend-mode: overlay; */
+    mix-blend-mode: multiply;
     z-index: 30;
     @mixin supportsGrid {
       grid-area: footer;
@@ -480,7 +481,7 @@
   /* DESCRIPTION TEXT */
   &__description {
     /* mix-blend-mode: normal; */
-    mix-blend-mode: multiply;
+    mix-blend-mode: lighten;
     z-index: 20;
     @mixin supportsGrid {
       grid-area: description;
@@ -600,7 +601,8 @@
   /* DESCRIPTION TEXT */
   &__description {
     /* mix-blend-mode: normal; */
-    mix-blend-mode: multiply;
+    /* mix-blend-mode: multiply; */
+    mix-blend-mode: lighten;
     z-index: 20;
     @mixin supportsGrid {
       grid-area: description;
@@ -724,8 +726,8 @@
 
   /* FOOTER */  
   &__footer {
-    /* mix-blend-mode: normal; */
-    mix-blend-mode: overlay;
+    mix-blend-mode: normal;
+    /* mix-blend-mode: overlay; */
     z-index: 30;
     @mixin supportsGrid {
       grid-area: footer;
