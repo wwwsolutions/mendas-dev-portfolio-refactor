@@ -12,11 +12,13 @@ $footerLinkColor: hsla(0, 50%, 90%, 1);
   justify-content: space-between;
   
   &__message {
-    color: $footerTextColor;
+    /* color: $footerTextColor; */
+    color: rgb(212, 85, 25);    
   }
 
   &__lnk {
-    color: $footerLinkColor;
+    /* color: $footerTextColor; */
+    color: rgb(212, 85, 25);    
   }
 
   @mixin atMedium {

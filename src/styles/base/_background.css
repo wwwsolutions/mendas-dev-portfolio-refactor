@@ -48,27 +48,27 @@ $gradient-angled-transparent: linear-gradient(
     border-bottom: 1px solid $whiteDarker;
   }
 
-  &--test {
+  &--light {
     $gradient-a: linear-gradient(
       220deg,
-      $stPatricksBlueLighter,
-      $orangeYellowDark,
-      $persianGreenBase,
-      $darkPurpleBase
+      hsla(235, 42%, 44%, 1),
+      hsla(43, 89%, 51%, 1),
+      hsla(173, 58%, 39%, 1),
+      hsla(264, 40%, 13%, 1)
     );
   
     $gradient-c: linear-gradient(
       330deg,
-      $stPatricksBlueLighter,
-      $orangeYellowDark,
-      $persianGreenBase,
-      $darkPurpleBase
+      hsla(235, 42%, 44%, 1),
+      hsla(43, 89%, 51%, 1),
+      hsla(173, 58%, 39%, 1),
+      hsla(264, 40%, 13%, 1)
     );
   
     $gradient-b: linear-gradient(
       260deg,
-      rgb(95, 95, 255),
-      rgb(218, 218, 218)
+      hsla(173, 58%, 19%, 1),
+      hsla(173, 58%, 59%, 1)
     );
     
     opacity: 1;
@@ -78,6 +78,92 @@ $gradient-angled-transparent: linear-gradient(
     background-color: white;
     background-image: url($bgImageUrl1920x2408), url($bgImageUrl1920x2408), $gradient-a, $gradient-b, $gradient-c;
     background-blend-mode: lighten, screen, hard-light, exclusion;
+  }
+
+  &--light-test-1 {
+    $gradient-b: linear-gradient(
+      260deg,
+      hsla(173, 58%, 19%, 1),
+      hsla(173, 58%, 59%, 1)
+    );
+
+    $gradient-c: linear-gradient(
+      330deg,
+      hsla(264, 40%, 3%, 1),
+      hsla(235, 42%, 44%, 1),
+      hsla(264, 40%, 3%, 1)
+    );
+    
+    opacity: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgb(17, 0, 34);
+    background-image: url($bgImageUrl1920x2408), $gradient-a, $gradient-c, $gradient-c;
+    background-blend-mode: overlay, screen, luminosity, exclusion;
+  }
+
+  &--light-test-2 {
+    $gradient-b: linear-gradient(
+      260deg,
+      hsla(173, 58%, 19%, 1),
+      hsla(173, 58%, 59%, 1)
+    );
+
+    $gradient-c: linear-gradient(
+      330deg,
+      hsla(264, 40%, 3%, 1),
+      hsla(235, 42%, 44%, 1),
+      hsla(264, 40%, 3%, 1)
+    );
+    
+    opacity: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgb(238, 238, 238);
+    background-image: url($bgImageUrl1920x2408), $gradient-a, $gradient-c, $gradient-c;
+    background-blend-mode: overlay, screen, luminosity, exclusion;
+  }
+
+  &--light-blue {
+    $gradient-a: linear-gradient(
+      260deg,
+      rgb(0, 0, 0),
+      rgb(27, 27, 27)
+    );
+
+    $gradient-c: linear-gradient(
+      330deg,
+      hsla(264, 40%, 23%, 1),
+      hsla(225, 40%, 28%, 1),
+      hsla(264, 40%, 23%, 1)
+    );
+    
+    opacity: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgb(255, 255, 255);
+    background-image: url($bgImageUrl1920x2408), $gradient-a, $gradient-c, $gradient-c;
+    background-blend-mode: overlay, screen, color, exclusion;
+  }
+
+  &--dark {
+
+    opacity: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgb(255, 255, 255);
+    background-image: 
+      url($bgImageUrl1920x2408), 
+      linear-gradient(
+        260deg,
+        rgb(8, 8, 30),
+        rgb(27, 27, 27)
+      );
+    background-blend-mode: overlay, multiply;
   }
 
   &--card1 {

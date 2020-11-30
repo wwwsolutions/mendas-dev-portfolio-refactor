@@ -225,6 +225,7 @@
       justify-self: start;
     }
 
+    text-transform: uppercase;
     font-weight: 600;
     font-size: 0.86em;
     color: $blackLighter;

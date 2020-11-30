@@ -34,7 +34,8 @@ $socialLinkColor: hsla(0, 0%, 100%, 1);
     outline: none;
     align-items: center;
     justify-content: center;
-    border: 1px solid $socialLinkColor;
+    /* border: 1px solid $socialLinkColor; */
+    border: 1px solid rgb(212, 85, 25);
   }
 
   &__icon {
@@ -43,6 +44,8 @@ $socialLinkColor: hsla(0, 0%, 100%, 1);
   }
 
   &__icon-path {
-    fill: $socialLinkColor;
+    /* fill: $socialLinkColor; */
+    fill: rgb(212, 85, 25);
+    /* color: $footerTextColor; */
   }
 }
